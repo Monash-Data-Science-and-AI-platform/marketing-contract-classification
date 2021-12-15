@@ -1,0 +1,24 @@
+{
+
+    "preTraining_data_path":[
+
+        "/content/drive/MyDrive/legal_bert/Copy of 1 actikare inc 2017.csv",
+        "/content/drive/MyDrive/legal_bert/Dataset/2 911 restoration 2017 .csv",
+        "/content/drive/MyDrive/legal_bert/Dataset/3 Adventures in advertising franchise llc 2017 .csv",
+        "/content/drive/MyDrive/legal_bert/Dataset/4 Amspirit franchise corp 2017.csv"
+    ],
+
+    "pre_Training_model_path":"/content/drive/MyDrive/legal_bert/nlpaueb-bert-base-uncased-contracts",
+
+    "save_model_path":"'/content/drive/MyDrive/legal_bert/pre_training'",
+
+    "max_length":512,
+    
+    "learning_rate":5e-6,
+
+    "shuffle":1000,
+
+    "epochs":100,
+
+    "batch_size":1
+}
