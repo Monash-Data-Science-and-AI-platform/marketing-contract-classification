@@ -1,5 +1,8 @@
 {
+    "project_name":"Legal-bert pre_training",
 
+    "wandb_entity":"ilee0022",
+    
     "preTraining_data_path":[
 
         "/content/drive/MyDrive/legal_bert/Copy of 1 actikare inc 2017.csv",
@@ -8,10 +11,12 @@
         "/content/drive/MyDrive/legal_bert/Dataset/4 Amspirit franchise corp 2017.csv"
     ],
 
-    "pre_Training_model_path":"/content/drive/MyDrive/legal_bert/nlpaueb-bert-base-uncased-contracts",
+    "pre_Training_model_path":"nlpaueb/bert-base-uncased-contracts",
 
     "save_model_path":"'/content/drive/MyDrive/legal_bert/pre_training'",
 
+    "modules_path":"/content/drive/MyDrive/legal_bert/modules/pre_Training",
+    
     "max_length":512,
     
     "learning_rate":5e-6,

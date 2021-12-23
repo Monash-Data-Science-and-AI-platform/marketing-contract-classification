@@ -1,12 +1,14 @@
 import sklearn.metrics as skm
 import numpy as np
+import tensorflow as tf
 
 def result_process(scaled_pred,val_labels,txt_path,counter):
-    #scaled_pred: prediction by model scaled with sigmoid layer
+    #scaled_pred: prediction by model(from logits)
     #val_labels: true labels of the validations set
     #txt_path: path for txt file for the result to print
     #counter: external counter for the epoch of the training
 
+    scaled_pred=tf.math.sigmoid(scaled_pred).numpy()#use sigmoid function to convert the logits to between 0 and 1
     #scale the predictions to 0 and 1
     scaled_pred[scaled_pred>0.5]=1
     scaled_pred[scaled_pred<=0.5]=0

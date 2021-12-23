@@ -1,0 +1,24 @@
+{
+    "training_data_path":[
+        "/content/drive/MyDrive/legal_bert/Dataset/Copy of labeled 2 contracts combined.xlsx"
+    ],
+
+    "validation_data_path":[
+        "/content/drive/MyDrive/legal_bert/Dataset/186 Arthur Rutenberg Homes coded.xlsx"
+    ],
+
+    "tokenizer_path":"nlpaueb/bert-base-uncased-contracts",
+
+    "model_path":"nlpaueb/bert-base-uncased-contracts",
+
+    "config_file_path":"/content/drive/MyDrive/legal_bert/modules/fine_tuning/config.json",
+
+    "output_file_path":"/content/drive/MyDrive/legal_bert/output_result/exp_1.txt",
+
+    "modules_path":"/content/drive/MyDrive/legal_bert/modules/fine_tuning",
+
+    "save_model_path":"/content/drive/MyDrive/legal_bert/fine_tuning_saved",
+
+    "save_config_path":"/content/drive/MyDrive/legal_bert/fine_tuning_saved/"
+
+}

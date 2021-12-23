@@ -1,5 +1,7 @@
 import tensorflow as tf
+import numpy as np
 from transformers import TFBertForSequenceClassification, BertConfig
+
 
 class Fine_tune_model:
 
@@ -9,12 +11,15 @@ class Fine_tune_model:
         self.model_path=model_path
         self.config_path=config_path
         self.keys=keys
+        self.config={}
         
 
     def update_config(self,keys,config_path):
     
         config = BertConfig.from_pretrained(config_path)
-        keys.append('None')
+
+        if ~(np.isin('None',np.array(keys))):
+            keys.append('None')
         
 
         id2label={}
@@ -37,22 +42,14 @@ class Fine_tune_model:
         return config
 
     def get_model(self):
-        config = self.update_config(self.keys,self.config_path)
-        model = TFBertForSequenceClassification.from_pretrained(self.model_path,config=config)
-
-        #add a layer, keras sigmoid
-        #is it that the higher the accuracy the better the lost function?
-
-        input_ids = tf.keras.Input(shape=(512,),dtype='int32',name='input_ids')#dimension=shape of array 512*batch size,int*float=float
-
-        transformer = model(input_ids)    
-        t_logits = transformer.logits # get output_hidden_states
-        output = tf.keras.layers.Activation('sigmoid',name='sigmoid')(t_logits)#tf keras.#dont dense
-        model = tf.keras.models.Model(inputs = input_ids, outputs = output, name='tf')
+        self.config = self.update_config(self.keys,self.config_path)
+        model = TFBertForSequenceClassification.from_pretrained(self.model_path,config=self.config)
 
         return model
 
+    def get_config(self):
 
+        return self.config
 
 
 
