@@ -16,15 +16,10 @@ def checkNote(note):#function for checking the notes from excel file
 
     note=note.lower()#change to lowercase
 
-    if(note==''):#if empty note, return True
-        return True
-    elif('disclosure document' in note):#if containing 'disclosure document' , then true
-        return True
-    elif('fdd' in note):#if containing 'fdd', return true
-        return True
-
-    else:#else return false
+    if('red' in note):#'red' signified redline
         return False
+    else:#else return True
+        return True
         
 #function to check whether the downloade file is corrupted or not
 def checkFile(fullfile):
