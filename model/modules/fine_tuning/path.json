@@ -1,24 +1,24 @@
 {
     "training_data_path":[
-        "/content/drive/MyDrive/legal_bert/Dataset/Copy of labeled 2 contracts combined.xlsx"
+        "ec18_scratch/ilee0022/Labeled Training Dataset_Manually Coded Contracts/labeled 2 contracts combined.xlsx"
     ],
 
     "validation_data_path":[
-        "/content/drive/MyDrive/legal_bert/Dataset/186 Arthur Rutenberg Homes coded.xlsx"
+        "ec18_scratch/ilee0022/Labeled Training Dataset_Manually Coded Contracts/186 Arthur Rutenberg Homes coded.xlsx"
     ],
 
-    "tokenizer_path":"nlpaueb/bert-base-uncased-contracts",
+    "tokenizer_path":"ec18_scratch/ilee0022/bert_based_uncased_contracts",
 
-    "model_path":"nlpaueb/bert-base-uncased-contracts",
+    "model_path":"ec18_scratch/ilee0022/bert_based_uncased_contracts",
 
-    "config_file_path":"/content/drive/MyDrive/legal_bert/modules/fine_tuning/config.json",
+    "config_file_path":"ec18_scratch/ilee0022/bert_based_uncased_contracts/config.json",
 
-    "output_file_path":"/content/drive/MyDrive/legal_bert/output_result/exp_1.txt",
+    "output_file_path":"ec18_scratch/ilee0022/output_result/test_1.txt",
 
-    "modules_path":"/content/drive/MyDrive/legal_bert/modules/fine_tuning",
+    "modules_path":"marketing-contract-classification/model/modules/fine_tuning",
 
-    "save_model_path":"/content/drive/MyDrive/legal_bert/fine_tuning_saved",
+    "save_model_path":"ec18_scratch/ilee0022/saved_fine_tuned_model",
 
-    "save_config_path":"/content/drive/MyDrive/legal_bert/fine_tuning_saved/"
+    "save_config_path":"ec18_scratch/ilee0022/saved_fine_tuned_model"
 
 }

@@ -8,7 +8,7 @@ import json
 import wandb
 from wandb.keras import WandbCallback
 
-preTraining_param_file=open('/content/drive/MyDrive/legal_bert/modules/pre_Training/preTraining.json')
+preTraining_param_file=open('marketing-contract-classification/model/modules/pre_Training/preTraining.json')
 preTraining=json.load(preTraining_param_file)
 sys.path.append(preTraining['modules_path'])
 from preTraining_data import PreTraining_data 
