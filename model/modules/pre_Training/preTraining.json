@@ -3,13 +3,7 @@
 
     "wandb_entity":"ilee0022",
     
-    "preTraining_data_path":[
-
-        "/content/drive/MyDrive/legal_bert/Copy of 1 actikare inc 2017.csv",
-        "/content/drive/MyDrive/legal_bert/Dataset/2 911 restoration 2017 .csv",
-        "/content/drive/MyDrive/legal_bert/Dataset/3 Adventures in advertising franchise llc 2017 .csv",
-        "/content/drive/MyDrive/legal_bert/Dataset/4 Amspirit franchise corp 2017.csv"
-    ],
+    "preTraining_file_path":"/content/drive/MyDrive/legal_bert/Dataset",
 
     "pre_Training_model_path":"nlpaueb/bert-base-uncased-contracts",
 

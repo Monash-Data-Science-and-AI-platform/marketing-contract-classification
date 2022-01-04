@@ -13,12 +13,22 @@ class PreTraining_data:
 
       #method for extracting data from excel file
       #return df as pandas.DataFrame
-      df=pd.read_csv(paths[0],dtype='string')
+      if paths[0].endswith('.csv'):
+        df=pd.read_csv(paths[0],dtype='string')
+
+      elif paths[0].endswith('.xlsx'):
+        df=pd.read_excel(paths[0])
+
       paths=np.delete(paths,0)#remove the first path as it is assigned to df already
       
       for path in paths:#iterate across the remaning paths
         
-        new=pd.read_csv(path,dtype='string')
+        if path.endswith('.csv'):
+          new=pd.read_csv(path,dtype='string')
+
+        elif path.endswith('.xlsx'):
+          new=pd.read_excel(path)
+        
         frames=[df,new]
         df=pd.concat(frames)
 
@@ -36,4 +46,3 @@ class PreTraining_data:
     def get_data(self):#return train set sentences
     
       return self.return_text(self.excel_paths)
-

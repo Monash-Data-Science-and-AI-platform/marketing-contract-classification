@@ -20,8 +20,10 @@ wandb.config = {
   "epochs": preTraining['epochs'],
   "batch_size": preTraining['batch_size']
 }
+csv_file=glob.glob(preTraining['preTraining_file_path']+"/*.csv")
+xlsx_file=glob.glob(preTraining['preTraining_file_path']+"/*.xlsx")
 
-excel_data=PreTraining_data(preTraining['preTraining_data_path'])
+excel_data=PreTraining_data(csv_file+xlsx_file)
 processedText=excel_data.get_data()
 process_Dataset=PreTraining_dataset(processedText,preTraining['pre_Training_model_path'],preTraining['max_length'])
 train_dataset=process_Dataset.get_dataset()
