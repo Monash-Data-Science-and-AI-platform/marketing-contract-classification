@@ -63,12 +63,12 @@ class Data_extract:
     
     #method for extracting data from excel file
     #return df as pandas.DataFrame
-    df=pd.read_excel(paths[0])#take the f
+    df=pd.read_excel(paths[0],engine='openpyxl')#take the f
     paths=np.delete(paths,0)#remove the first path as it is assigned to df already
     
     for path in paths:#iterate across the remaning paths
       
-      new=pd.read_excel(path)
+      new=pd.read_excel(path,engine='openpyxl')
       frames=[df,new]
       df=pd.concat(frames)
 
