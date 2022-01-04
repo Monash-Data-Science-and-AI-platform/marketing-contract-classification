@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import openpyxl
 
 #class for data extractions from excel file containing:
 #'processedText': sentences
