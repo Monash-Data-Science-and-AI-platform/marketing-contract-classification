@@ -15,7 +15,7 @@
 
     "output_file_path":"ec18_scratch/ilee0022/output_result/test_1.txt",
 
-    "modules_path":"ec18/model/modules/fine_tuning",
+    "modules_path":"marketing-contract-classification/model/modules/fine_tuning",
 
     "save_model_path":"ec18_scratch/ilee0022/saved_fine_tuned_model",
 

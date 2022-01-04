@@ -9,8 +9,8 @@ from wandb.keras import WandbCallback
 import sys
 import datetime
 
-param_file=open('ec18/model/modules/fine_tuning/parameter.json')
-path_file=open('ec18/model/modules/fine_tuning/path.json')
+param_file=open('marketing-contract-classification/model/modules/fine_tuning/parameter.json')
+path_file=open('emarketing-contract-classification/model/modules/fine_tuning/path.json')
 
 param=json.load(param_file)
 path=json.load(path_file)
