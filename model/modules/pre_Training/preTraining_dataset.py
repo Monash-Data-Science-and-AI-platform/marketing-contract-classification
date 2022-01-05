@@ -21,7 +21,9 @@ class PreTraining_dataset:
 
         tokenizer = AutoTokenizer.from_pretrained(self.tokenizer_path)
 
-        encodings = tokenizer(self.data.tolist(), truncation=True, padding='max_length', max_length=512)
+        
+        encodings = tokenizer(self.data.tolist(), truncation=True, padding='max_length', max_length=512,is_split_into_words=True)
+        
         encode=np.array(encodings.input_ids)
 
         arr=np.random.rand(*encode.shape)
