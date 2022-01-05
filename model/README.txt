@@ -124,6 +124,30 @@ Additonal details for single class labelling vs multi-class labelling
 		-use "categorical_crossentropy" for single-class classification
 	
 	
+________________________________________________________________________________________________________________________________________________________
+M3 MASSIVE speicfic issues:
+1. TypeError: Invalid keyword argument(s) in `compile`: {'steps_per_execution'}
+-This is due to the default tensorflow-gpu 2.2.0 does not support {'steps_per_execution'} in model.fit()
+-Solution:
+	-download tensorflow-gpu 2.4.0 or later version of tensorflow
+	-in the slurm-gpu-job-script:
+		-module unload cuda
+		-module load cuda/11.0 
+	#tensorflow-gpu 2.4.0 requires cuda 11.0, if other version of tensorflow is used, please refer to https://www.tensorflow.org/install/source#tested_build_configurations
+	#to get the correct cuda version
+
+2. Weird [Errno 2] No such file or directory or ModuleNotFoundError (even though module is installed in miniconda)
+-Solution: Do not define module load tensorflow in slurm-gpu-job-script
+
+3. unable to read .xlsx fie
+-Solutions: 
+	-install openpyxl in miniconda
+	-In the .py file, define import openpyxl
+	-in the line for pd.read_excel, define the argument in pd.read_excel, engine='openpyxl'
+
+
+
+
 
 
 
