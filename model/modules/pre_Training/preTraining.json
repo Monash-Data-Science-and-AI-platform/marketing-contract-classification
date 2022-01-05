@@ -3,13 +3,13 @@
 
     "wandb_entity":"ilee0022",
     
-    "preTraining_file_path":"/content/drive/MyDrive/legal_bert/Dataset",
+    "preTraining_folder_path":"ec18_scratch/ilee0022/Entire Dataset_Unlabled",
 
-    "pre_Training_model_path":"nlpaueb/bert-base-uncased-contracts",
+    "pre_Training_model_path":"ec18_scratch/ilee0022/bert_based_uncased_contracts",
 
-    "save_model_path":"'/content/drive/MyDrive/legal_bert/pre_training'",
+    "save_model_path":"ec18_scratch/ilee0022/preTrained_model",
 
-    "modules_path":"/content/drive/MyDrive/legal_bert/modules/pre_Training",
+    "modules_path":"marketing-contract-classification/model/modules/pre_Training",
     
     "max_length":512,
     
