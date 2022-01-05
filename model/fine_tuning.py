@@ -54,7 +54,7 @@ with open(path['output_file_path'], "w") as f:
 
 
 for i in range(param['epochs']):
-  model.fit(train_dataset.shuffle(param['shuffle']).batch(param['train_batch_size']), epochs=1, batch_size=param['train_batch_size'], validation_data=val_dataset.batch(param['val_batch_size']),callbacks=[WandbCallback()])#will it behaves properly?????
+  model.fit(train_dataset.shuffle(param['shuffle']).batch(param['train_batch_size']), epochs=1, batch_size=param['train_batch_size'], validation_data=val_dataset.batch(param['val_batch_size']),callbacks=[WandbCallback()],verbose=2)#will it behaves properly?????
   scaled_pred=model.predict(val_dataset.batch(param['val_batch_size']),batch_size=param['val_batch_size'])
   result_process(scaled_pred.logits,val_labels,path['output_file_path'],i)
 
