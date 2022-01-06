@@ -17,7 +17,7 @@ class PreTraining_data:
         df=pd.read_csv(paths[0],dtype='string')
 
       elif paths[0].endswith('.xlsx'):
-        df=pd.read_excel(paths[0],engine='openpyxl')
+        df=pd.read_excel(paths[0],engine='openpyxl',dtype='string')
 
       paths=np.delete(paths,0)#remove the first path as it is assigned to df already
       
@@ -33,7 +33,7 @@ class PreTraining_data:
               pass
 
         elif path.endswith('.xlsx'):
-          new=pd.read_excel(path,engine='openpyxl')
+          new=pd.read_excel(path,engine='openpyxl',dtype='string')
         
         if(error==False):
             new=new.dropna()

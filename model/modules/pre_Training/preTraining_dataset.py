@@ -21,8 +21,16 @@ class PreTraining_dataset:
 
         tokenizer = AutoTokenizer.from_pretrained(self.tokenizer_path)
 
+        a=np.zeros(len(self.data.tolist()))
+
+        for i in range(len(self.data.tolist())):
+
+            try:
+                encodings = tokenizer(self.data.tolist(), truncation=True, padding='max_length', max_length=512)
+                a[i]=encodings
+            except:
+                print(self.data.tolist()[i])
         
-        encodings = tokenizer(self.data.tolist(), truncation=True, padding='max_length', max_length=512)
         
         encode=np.array(encodings.input_ids)
 
