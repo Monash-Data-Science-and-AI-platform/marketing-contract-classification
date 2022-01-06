@@ -22,7 +22,7 @@ class PreTraining_dataset:
         tokenizer = AutoTokenizer.from_pretrained(self.tokenizer_path)
 
         
-        encodings = tokenizer(self.data.tolist(), truncation=True, padding='max_length', max_length=512,is_split_into_words=True)
+        encodings = tokenizer(self.data.tolist(), truncation=True, padding='max_length', max_length=512)
         
         encode=np.array(encodings.input_ids)
 

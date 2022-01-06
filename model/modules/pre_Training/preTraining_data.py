@@ -39,7 +39,7 @@ class PreTraining_data:
             new=new.dropna()
             frames=[df,new]
             df=pd.concat(frames)
-
+      df.to_csv('check.csv')
       return df
 
     def return_text(self,paths):
