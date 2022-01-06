@@ -26,7 +26,7 @@ xlsx_file=glob.glob(preTraining['preTraining_folder_path']+"/*.xlsx")
 
 excel_data=PreTraining_data(csv_file+xlsx_file)
 processedText=excel_data.get_data()
-process_Dataset=PreTraining_dataset(processedText,preTraining['pre_Training_model_path'],preTraining['max_length'])
+process_Dataset=PreTraining_dataset(processedText.astype(str),preTraining['pre_Training_model_path'],preTraining['max_length'])
 train_dataset=process_Dataset.get_dataset()
 
 from transformers import TFBertForMaskedLM
@@ -35,6 +35,6 @@ loss = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)#input_ids
 optimizer = tf.keras.optimizers.Adam(preTraining['learning_rate'])
 model.compile(optimizer=optimizer,metrics=['accuracy'],loss=loss) # what loss function should I use???
 
-model.fit(train_dataset.shuffle(preTraining['shuffle']).batch(preTraining['batch_size']),epochs=preTraining['epochs'],batch_size=preTraining['batch_size'],callbacks=[WandbCallback()])
+model.fit(train_dataset.shuffle(preTraining['shuffle']).batch(preTraining['batch_size']),epochs=preTraining['epochs'],batch_size=preTraining['batch_size'],callbacks=[WandbCallback()],verbose=2)
 
 model.save_pretrained(preTraining['save_model_path'])
