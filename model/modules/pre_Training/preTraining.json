@@ -13,11 +13,11 @@
     
     "max_length":512,
     
-    "learning_rate":5e-6,
+    "learning_rate":1e-5,
 
     "shuffle":1000,
 
     "epochs":100,
 
-    "batch_size":1
+    "batch_size":16
 }
