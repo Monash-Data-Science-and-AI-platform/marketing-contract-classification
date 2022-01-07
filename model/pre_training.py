@@ -36,6 +36,10 @@ loss = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)#input_ids
 optimizer = tf.keras.optimizers.Adam(preTraining['learning_rate'])
 model.compile(optimizer=optimizer,metrics=['accuracy'],loss=loss) # what loss function should I use???
 
-model.fit(train_dataset.shuffle(preTraining['shuffle']).batch(preTraining['batch_size']),epochs=preTraining['epochs'],batch_size=preTraining['batch_size'],callbacks=[WandbCallback()],verbose=2)
+for i in range(preTraining['epochs']):
+  model.fit(train_dataset.shuffle(preTraining['shuffle']).batch(preTraining['batch_size']),epochs=1,batch_size=preTraining['batch_size'],callbacks=[WandbCallback()],verbose=2)
 
-model.save_pretrained(preTraining['save_model_path'])
+  model.save_pretrained(preTraining['save_model_path'])
+
+  
+
