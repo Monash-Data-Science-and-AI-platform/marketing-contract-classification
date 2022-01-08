@@ -6,7 +6,7 @@ import json
 import datetime
 from transformers import AutoTokenizer, TFBertForSequenceClassification, BertConfig
 
-param_file=open('marketing-contract-classification/model/modules/fine_tuning/parameter.json')
+param_file=open('marketing-contract-classification/model/inference/inference.json')
 param=json.load(param_file)
 
 df=pd.read_csv(param['data_file_path'])

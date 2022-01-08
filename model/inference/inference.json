@@ -3,19 +3,19 @@
         "DC","CA_1","CA_2","R&R","IE","Flex"
     ],
     
-    "data_file_path": "/content/drive/MyDrive/legal_bert/Copy of 1 actikare inc 2017.csv",
+    "data_file_path": "ec18_scratch/ilee0022/Labeled Training Dataset_Manually Coded Contracts/186 Arthur Rutenberg Homes coded.xlsx",
 
     "inclusive_starting_row":0,
 
     "exclusive_ending_row":5,
 
-    "tokenizer_path":"nlpaueb/bert-base-uncased-contracts",
+    "tokenizer_path":"ec18_scratch/ilee0022/bert_based_uncased_contracts",
 
-    "model_path":"/content/drive/MyDrive/legal_bert/fine_tuning_saved/tf_model.h5",
+    "model_path":"ec18_scratch/ilee0022/saved_fine_tuned_model_epoch_9",
 
-    "config_path":"/content/drive/MyDrive/legal_bert/fine_tuning_saved/config.json",
+    "config_path":"ec18_scratch/ilee0022/saved_fine_tuned_model_epoch_9/config.json",
 
-    "output_path":"/content/drive/MyDrive/legal_bert/inference/inference_1.txt",
+    "output_path":"/content/drive/MyDrive/legal_bert/inference/inference_M3_1.txt",
 
     "max_length":512
 }
