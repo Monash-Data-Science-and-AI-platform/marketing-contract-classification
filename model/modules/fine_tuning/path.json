@@ -9,7 +9,7 @@
 
     "tokenizer_path":"ec18_scratch/ilee0022/bert_based_uncased_contracts",
 
-    "model_path":"ec18_scratch/ilee0022/bert_based_uncased_contracts",
+    "model_path":"ec18_scratch/ilee0022/preTrained_model",
 
     "config_file_path":"ec18_scratch/ilee0022/bert_based_uncased_contracts/config.json",
 
