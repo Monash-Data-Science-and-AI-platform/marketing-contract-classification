@@ -17,8 +17,8 @@
 
     "modules_path":"marketing-contract-classification/model/modules/fine_tuning",
 
-    "save_model_path":"ec18_scratch/ilee0022/saved_fine_tuned_model",
+    "save_model_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/preTrained",
 
-    "save_config_path":"ec18_scratch/ilee0022/saved_fine_tuned_model"
+    "save_config_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/preTrained"
 
 }
