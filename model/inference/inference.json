@@ -15,7 +15,7 @@
 
     "config_path":"ec18_scratch/ilee0022/saved_fine_tuned_model_epoch_9/config.json",
 
-    "output_path":"marketing-contract-classification/model/inference/inference_M3_1.txt",
+    "output_path":"ec18_scratch/ilee0022/inference_output/inference_output_1.txt",
 
     "max_length":512
 }
