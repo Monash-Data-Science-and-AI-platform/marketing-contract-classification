@@ -58,6 +58,6 @@ for i in range(param['epochs']):
   scaled_pred=model.predict(val_dataset.batch(param['val_batch_size']),batch_size=param['val_batch_size'])
   result_process(scaled_pred.logits,val_labels,path['output_file_path'],i)
 
-  model.save_pretrained(path['save_model_path'])
+  model.save_pretrained(path['save_model_path']+"_epoch_"+str(i))
   config_save=fine_tune_model.get_config()
-  config_save.save_pretrained(path['save_config_path'])
+  config_save.save_pretrained(path['save_config_path']+"_epoch_"+str(i))

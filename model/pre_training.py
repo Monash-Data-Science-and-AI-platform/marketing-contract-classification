@@ -26,7 +26,7 @@ xlsx_file=glob.glob(preTraining['preTraining_folder_path']+"/*.xlsx")
 
 excel_data=PreTraining_data(csv_file+xlsx_file)
 processedText=excel_data.get_data()
-print(len(processedText))
+
 process_Dataset=PreTraining_dataset(processedText.astype(str),preTraining['pre_Training_model_path'],preTraining['max_length'])
 train_dataset=process_Dataset.get_dataset()
 
@@ -39,7 +39,7 @@ model.compile(optimizer=optimizer,metrics=['accuracy'],loss=loss) # what loss fu
 for i in range(preTraining['epochs']):
   model.fit(train_dataset.shuffle(preTraining['shuffle']).batch(preTraining['batch_size']),epochs=1,batch_size=preTraining['batch_size'],callbacks=[WandbCallback()],verbose=2)
 
-  model.save_pretrained(preTraining['save_model_path'])
+  model.save_pretrained(preTraining['save_model_path']+"_epoch_"+str(i))
 
   
 
