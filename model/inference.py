@@ -9,7 +9,12 @@ from transformers import AutoTokenizer, TFBertForSequenceClassification, BertCon
 param_file=open('marketing-contract-classification/model/inference/inference.json')
 param=json.load(param_file)
 
-df=pd.read_csv(param['data_file_path'])
+if param['data_file_path'].endswith('.csv'):
+  df=pd.read_csv(param['data_file_path'],dtype='string')
+
+elif param['data_file_path'].endswith('.xlsx'):
+  df=pd.read_excel(param['data_file_path'],engine='openpyxl',dtype='string')
+
 sentences=df['processedText'].to_numpy()
 sentences=sentences[param['inclusive_starting_row']:param['exclusive_ending_row']]
 
