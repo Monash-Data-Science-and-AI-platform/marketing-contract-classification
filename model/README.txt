@@ -145,6 +145,10 @@ M3 MASSIVE speicfic issues:
 	-In the .py file, define import openpyxl
 	-in the line for pd.read_excel, define the argument in pd.read_excel, engine='openpyxl'
 
+4. Resource exhaust error
+-For V100 GPU, pre-training only allow up until batch size of 16
+
+
 
 
 
