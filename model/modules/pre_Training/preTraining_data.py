@@ -23,23 +23,24 @@ class PreTraining_data:
       
       for path in paths:#iterate across the remaning paths
         
-        error=False
-        if path.endswith('.csv'):
+        error=False#intialise error variable
+        if path.endswith('.csv'):#for csv file
           try:
-              new=pd.read_csv(path,dtype='string')
+              new=pd.read_csv(path,dtype='string')#read the file
           except:
-              error=True
-              print(path)
+              error=True#if fails to read the file
+              print(path)#print the file's path
               pass
 
-        elif path.endswith('.xlsx'):
-          new=pd.read_excel(path,engine='openpyxl',dtype='string')
+        elif path.endswith('.xlsx'):#for xlsx file
+          new=pd.read_excel(path,engine='openpyxl',dtype='string')#read the file
         
-        if(error==False):
-            new=new.dropna()
+        if(error==False):#if  no error occured
+            new=new.dropna()#remove all empty rows
             frames=[df,new]
-            df=pd.concat(frames)
-      df.to_csv('check.csv')
+            df=pd.concat(frames)#concate the current df with the newly read df
+
+      
       return df
 
     def return_text(self,paths):
