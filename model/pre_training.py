@@ -44,7 +44,9 @@ loss = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)#define th
 optimizer = tf.keras.optimizers.Adam(preTraining['learning_rate'])#define the optimizer
 model.compile(optimizer=optimizer,metrics=['accuracy'],loss=loss) # compile the model
 
+print('training started')
 for i in range(preTraining['epochs']):
+  ####
   model.fit(train_dataset.shuffle(preTraining['shuffle']).batch(preTraining['batch_size']),epochs=1,batch_size=preTraining['batch_size'],callbacks=[WandbCallback()],verbose=2)#train the model
   
   model.save_pretrained(preTraining['save_model_path']+"/epoch_"+str(i))#save the model
