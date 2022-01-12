@@ -37,13 +37,14 @@ scaled_result=tf.math.sigmoid(logits).numpy()#scale the output logits with sigmo
 standardized_result=np.zeros(scaled_result.shape)#define the np array of the standarduzed result
 standardized_result[scaled_result>=0.5]=1#standardized the scaled logits
 
-#format the output to txt file
-sentence_index=np.transpose(np.arange(len(standardized_result)))
-output=np.hstack((np.split(np.transpose(sentence_index),len(sentence_index)),standardized_result))
+standardized_result_trans=np.transpose(standardized_result)#transpose the array for outputing the result
 
-#write the output result to txt file
-with open(param['output_path'], "a") as f:
-  f.write('%s\n' % datetime.datetime.now())
-  f.write("Prediction:\n")
-  f.write('No.\t'+"\t".join(param['keys'])+"\tNone\n")
-  np.savetxt(f,output,delimiter='\t',fmt='%d')
+new_df=pd.DataFrame()#initialize new pandas dataframe
+new_df['input_sentences']=sentences#add the sentences into the dataframe
+new_df['doc path']=np.full((len(sentences)),param['data_file_path'])#transfer the document path
+
+for i in range(len(param['keys'])):#transfer all the predictions into the df
+  new_df[param['keys'][i]]=standardized_result_trans[i]
+
+
+new_df.to_csv(param['output_path'])#output the df to a .csv file
