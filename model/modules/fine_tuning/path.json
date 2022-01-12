@@ -9,16 +9,16 @@
 
     "tokenizer_path":"ec18_scratch/ilee0022/bert_based_uncased_contracts",
 
-    "model_path":"ec18_scratch/ilee0022/preTrained_model/epoch_0",
+    "model_path":"ec18_scratch/ilee0022/preTrained_model/epoch_8",
 
-    "config_file_path":"ec18_scratch/ilee0022/preTrained_model/epoch_0/config.json",
+    "config_file_path":"ec18_scratch/ilee0022/preTrained_model/epoch_8/config.json",
 
-    "output_file_path":"ec18_scratch/ilee0022/output_result/pt_epoch0.txt",
+    "output_file_path":"ec18_scratch/ilee0022/output_result/pt_epoch8.txt",
 
     "modules_path":"marketing-contract-classification/model/modules/fine_tuning",
 
-    "save_model_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/pt0",
+    "save_model_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/pt8",
 
-    "save_config_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/pt0"
+    "save_config_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/pt8"
 
 }
