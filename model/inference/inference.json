@@ -7,7 +7,7 @@
 
     "inclusive_starting_row":0,
 
-    "exclusive_ending_row":5,
+    "exclusive_ending_row":20,
 
     "tokenizer_path":"ec18_scratch/ilee0022/bert_based_uncased_contracts",
 
