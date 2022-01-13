@@ -72,22 +72,23 @@ for i in range(param['epochs']):
 
   counter=0
   for key in report_dict:
-    f1_scores[counter][i]=key['f1-score']
+    f1_scores[counter][i]=report_dict[key]['f1-score']
     counter+=1
+
+    if counter==len(param['keys']):
+      break
 
   model.save_pretrained(path['save_model_path']+"/epoch_"+str(i))#save the model
   config_save=fine_tune_model.get_config()#get the updated config file
   config_save.save_pretrained(path['save_config_path']+"/epoch_"+str(i))#save the config file
 
-plt.plot(epochs, f1_scores)
- 
+for i in range(len(f1_scores)):
+  plt.plot(epochs, f1_scores[i])
 # naming the x axis
 plt.xlabel('epoch')
 # naming the y axis
 plt.ylabel('f1 scores')
- 
 # giving a title to my graph
 plt.title('F1 scores over epochs')
- 
 # function to show the plot
 plt.show()
