@@ -18,7 +18,7 @@ def result_process(scaled_pred,val_labels,txt_path,counter):
 
     #generate the report
     report=skm.classification_report(val_labels,scaled_pred)#
-
+    report_dict=skm.classification_report(val_labels,scaled_pred,output_dict=True)
     #get the shape of confusio matrix for printing
     dimension=confusion_matrix.shape
 
@@ -32,3 +32,5 @@ def result_process(scaled_pred,val_labels,txt_path,counter):
         for j in range(dimension[0]): #iterate across the 1st dimension
             np.savetxt(f, confusion_matrix[j], fmt='%i')
             f.write("\n")
+
+    return report_dict

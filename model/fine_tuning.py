@@ -8,6 +8,7 @@ import wandb
 from wandb.keras import WandbCallback
 import sys
 import datetime
+import matplotlib.pyplot as plt
 
 #open the json file that contains all the path and parameters
 param_file=open('marketing-contract-classification/model/modules/fine_tuning/parameter.json')
@@ -60,12 +61,33 @@ with open(path['output_file_path'], "w") as f:#output the model's summary
         f.write(" %s" %model.summary(print_fn=lambda x: f.write(x + '\n')))
         f.write("\n")
 
+epochs=np.arange(0,param['epochs'])
+f1_scores=np.zeros((len(param['keys']),param['epochs']))
+
 print('training started')
 for i in range(param['epochs']):
   model.fit(train_dataset.shuffle(param['shuffle']).batch(param['train_batch_size']), epochs=1, batch_size=param['train_batch_size'], validation_data=val_dataset.batch(param['val_batch_size']),callbacks=[WandbCallback()],verbose=2)#train the model
-  scaled_pred=model.predict(val_dataset.batch(param['val_batch_size']),batch_size=param['val_batch_size'])#get the predictions
-  result_process(scaled_pred.logits,val_labels,path['output_file_path'],i)#class to process the result
+  pred=model.predict(val_dataset.batch(param['val_batch_size']),batch_size=param['val_batch_size'])#get the predictions
+  report_dict=result_process(pred.logits,val_labels,path['output_file_path'],i)#class to process the result
+
+  counter=0
+  for key in report_dict:
+    f1_scores[counter][i]=key['f1-score']
+    counter+=1
 
   model.save_pretrained(path['save_model_path']+"/epoch_"+str(i))#save the model
   config_save=fine_tune_model.get_config()#get the updated config file
   config_save.save_pretrained(path['save_config_path']+"/epoch_"+str(i))#save the config file
+
+plt.plot(epochs, f1_scores)
+ 
+# naming the x axis
+plt.xlabel('epoch')
+# naming the y axis
+plt.ylabel('f1 scores')
+ 
+# giving a title to my graph
+plt.title('F1 scores over epochs')
+ 
+# function to show the plot
+plt.show()
