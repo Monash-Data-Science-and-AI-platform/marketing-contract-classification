@@ -83,7 +83,7 @@ for i in range(param['epochs']):
   config_save.save_pretrained(path['save_config_path']+"/epoch_"+str(i))#save the config file
 
 for i in range(len(f1_scores)):
-  plt.plot(epochs, f1_scores[i])
+  plt.plot(epochs, f1_scores[i],label=param['keys'][i])
 # naming the x axis
 plt.xlabel('epoch')
 # naming the y axis
