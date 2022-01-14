@@ -4,7 +4,7 @@ Documentation of MASSIVE is available at https://docs.massive.org.au/
 ___________________________________________________________________________________________________________________________________________________________
 Creating miniconda:
 
-1. login to MASSIVE via https://beta.desktop.cvl.org.au/login
+1. login to MASSIVE via https://beta.desktop.cvl.org.au/login, choose CVL
 2. Click terminal and select single T4 gpu(own preference) and then launch
 3. Under pending/running terminal, click connect
 4. setup miniconda environment, documentation is available at https://docs.massive.org.au/M3/software/pythonandconda/python-miniconda.html?highlight=miniconda
@@ -54,8 +54,33 @@ $ wandb login
 
 
 ___________________________________________________________________________________________________________________________________________________________
+Running py code via submitting slurm job script:
+
+-open the terminal and run the command:
+
+sbatch slurm-gpu-job-script
+
+-more info in: example slurm-gpu-job-script.txt and slurm-gpu-job-script guide.txt
+
+___________________________________________________________________________________________________________________________________________________________
+
+Common command used in MASSIVE terminal:
 
 
+show_cluster //show the status of all CPU and GPU on MASSIVE
 
+source [path to miniconda]/miniconda/bin/activate //activate conda environment
+
+conda list //check modules downloaded in conda
+
+ls //check job
+
+show_job // show all jobs being submitted
+
+cd //go to certain directories
+
+git pull //pull changes from remote repository
+
+sbatch slurm-gpu-job-script //submit slurm job script
 
 

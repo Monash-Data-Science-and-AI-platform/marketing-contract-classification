@@ -1,0 +1,69 @@
+NOTE: To activate a SLURM option, remove the whitespace between the '#' and 'SBATCH'
+
+1. #SBATCH --job-name=isaacLee_pt_plus_ft
+use different job name when submitting multiple jobs at once
+
+2. 
+# Option 1: Choose any GPU whatever m2070 or K20
+# Note in most cases, 'gpu:N' should match '--ntasks=N'
+#SBATCH --gres=gpu:1
+
+activating the 3rd line will ask the scheduler to assign default gpu
+
+3.
+# Option 2: Choose GPU flavours, "k20m" or "m2070"
+#SBATCH --gres=gpu:V100:1
+#SBATCH --partition=m3g
+
+this will request 1 V100 gpu
+only 1 gpu is allowed as special codes are needed for multiple gpu
+check out https://docs.massive.org.au/M3/GPU-docs/GPU-look-up-tables.html
+for more info on gpu
+
+4. 
+#SBATCH --time=1-00:00:00
+format: day-hours:minutes:seconds
+define the running time of the job, pre-training requires at least 1 day as 1 epochs take
+around 4 hours
+
+5. 
+# To receive an email when job completes or fails
+#SBATCH --mail-user=[your email]
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
+
+activate these 3 lines to get notifications on the status of the job
+
+6.
+# Set the file for output (stdout)
+#SBATCH --output=ec18_scratch/ilee0022/pt_plus_ft_logs/pt14.out
+
+this line define the console output of the script
+must use extension .out
+
+7.
+# Set the file for error log (stderr)
+#SBATCH --error=ec18_scratch/ilee0022/pt_plus_ft_logs/pt14.err
+
+this line define the where the error should be printed
+must use extension .err
+
+8.
+# Command to run a gpu job
+# For example:
+module unload cuda
+module load cuda/11.0
+nvidia-smi
+# deviceQuery
+
+source ec18_scratch/ilee0022/miniconda/bin/activate
+echo $CONDA_DEFAULT_ENV
+conda list pandas
+# module load tensorflow
+python marketing-contract-classification/model/fine_tuning.py
+
+module unload cuda : unload the default cuda
+module load cuda/11.0: load the correct cuda version to suit tensorflow
+source ec18_scratch/ilee0022/miniconda/bin/activate: activate conda env
+# module load tensorflow: do not activate this line
+python marketing-contract-classification/model/fine_tuning.py: file to be run
