@@ -90,6 +90,7 @@ plt.xlabel('epoch')
 plt.ylabel('f1 scores')
 # giving a title to my graph
 plt.title('F1 scores over epochs')
+plt.legend()
 # function to show the plot
 plt.show()
-plt.savefig('ec18_scratch/ilee0022/pt_plus_ft_logs/pt8_f1.png')
+plt.savefig(path['graph_output_pathh'])
