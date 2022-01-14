@@ -64,12 +64,15 @@ with open(path['output_file_path'], "w") as f:#output the model's summary
 epochs=np.arange(0,param['epochs'])
 f1_scores=np.zeros((len(param['keys']),param['epochs']))
 weighted_average=np.zeros(param['epochs'])
+output_dict={}
 
 print('training started')
 for i in range(param['epochs']):
   model.fit(train_dataset.shuffle(param['shuffle']).batch(param['train_batch_size']), epochs=1, batch_size=param['train_batch_size'], validation_data=val_dataset.batch(param['val_batch_size']),callbacks=[WandbCallback()],verbose=2)#train the model
   pred=model.predict(val_dataset.batch(param['val_batch_size']),batch_size=param['val_batch_size'])#get the predictions
   report_dict=result_process(pred.logits,val_labels,path['output_file_path'],i)#class to process the result
+  
+  output_dict[str(i)]=report_dict
   
   weighted_average[i]=report_dict['weighted avg']
   counter=0
@@ -83,6 +86,11 @@ for i in range(param['epochs']):
   model.save_pretrained(path['save_model_path']+"/epoch_"+str(i))#save the model
   config_save=fine_tune_model.get_config()#get the updated config file
   config_save.save_pretrained(path['save_config_path']+"/epoch_"+str(i))#save the config file
+
+
+with open(path['raw_data_output_path']) as f:
+  json.dump(output_dict, f, indent = 4)
+  f.close()
 
 for i in range(len(f1_scores)):
   plt.plot(epochs, f1_scores[i],label=param['keys'][i])

@@ -17,6 +17,8 @@
 
     "graph_output_path":"ec18_scratch/ilee0022/pt_plus_ft_logs/pt14.png",
 
+    "raw_data_output_path":"ec18_scratch/ilee0022/output_result/pt14_raw.json",
+
     "modules_path":"marketing-contract-classification/sentence_classification/modules/fine_tuning",
 
     "save_model_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/pt14",
