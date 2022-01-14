@@ -92,3 +92,4 @@ plt.ylabel('f1 scores')
 plt.title('F1 scores over epochs')
 # function to show the plot
 plt.show()
+plt.savefig('ec18_scratch/ilee0022/pt_plus_ft_logs/pt8_f1.png')
