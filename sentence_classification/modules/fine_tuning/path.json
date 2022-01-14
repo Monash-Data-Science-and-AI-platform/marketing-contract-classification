@@ -11,7 +11,7 @@
 
     "model_path":"ec18_scratch/ilee0022/preTrained_model/epoch_14",
 
-    "config_file_path":"ec18_scratch/ilee0022/preTrained_model/epoch_14/tf_model.h5/config.json",
+    "config_file_path":"ec18_scratch/ilee0022/preTrained_model/epoch_14/config.json",
 
     "output_file_path":"ec18_scratch/ilee0022/output_result/pt14.txt",
 

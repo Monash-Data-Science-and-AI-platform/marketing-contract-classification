@@ -63,13 +63,15 @@ with open(path['output_file_path'], "w") as f:#output the model's summary
 
 epochs=np.arange(0,param['epochs'])
 f1_scores=np.zeros((len(param['keys']),param['epochs']))
+weighted_average=np.zeros(param['epochs'])
 
 print('training started')
 for i in range(param['epochs']):
   model.fit(train_dataset.shuffle(param['shuffle']).batch(param['train_batch_size']), epochs=1, batch_size=param['train_batch_size'], validation_data=val_dataset.batch(param['val_batch_size']),callbacks=[WandbCallback()],verbose=2)#train the model
   pred=model.predict(val_dataset.batch(param['val_batch_size']),batch_size=param['val_batch_size'])#get the predictions
   report_dict=result_process(pred.logits,val_labels,path['output_file_path'],i)#class to process the result
-
+  
+  weighted_average[i]=report_dict['weighted avg']
   counter=0
   for key in report_dict:
     f1_scores[counter][i]=report_dict[key]['f1-score']
@@ -85,6 +87,8 @@ for i in range(param['epochs']):
 for i in range(len(f1_scores)):
   plt.plot(epochs, f1_scores[i],label=param['keys'][i])
 # naming the x axis
+plt.plot(epochs,weighted_average,label='weighted average')
+
 plt.xlabel('epoch')
 # naming the y axis
 plt.ylabel('f1 scores')
