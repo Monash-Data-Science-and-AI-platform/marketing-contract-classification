@@ -1,0 +1,61 @@
+To run this model on MASSIVE, there are some steps needed to be done
+
+Documentation of MASSIVE is available at https://docs.massive.org.au/
+___________________________________________________________________________________________________________________________________________________________
+Creating miniconda:
+
+1. login to MASSIVE via https://beta.desktop.cvl.org.au/login
+2. Click terminal and select single T4 gpu(own preference) and then launch
+3. Under pending/running terminal, click connect
+4. setup miniconda environment, documentation is available at https://docs.massive.org.au/M3/software/pythonandconda/python-miniconda.html?highlight=miniconda
+
+___________________________________________________________________________________________________________________________________________________________
+Installation of modules:
+
+After setting up miniconda , and the taskbar on the left, Jupyter Lab from .scratch.ec18.[username].miniconda should be available
+1. Launch the  Jupyter Lab from [].miniconda terminal
+2. Launch the terminal in the launcher(inside Jupyter Lab from [].miniconda terminal)
+3. Activate the conda environment with the command:  source [path to miniconda/bin/activate]
+4. Create the virtual environment with the command: conda env update -n base --file [path to environment.yml]
+
+___________________________________________________________________________________________________________________________________________________________
+To upload large amount of file:
+
+Use Filezilla to transfer files(especially the dataset) into MASSIVE, documentation is available at: https://docs.massive.org.au/M3/transferring-files.html
+
+
+___________________________________________________________________________________________________________________________________________________________
+To obatain code from GitHub repository:
+1. Clone the repository by running this command in terminal
+$ git clone https://github.com/Monash-Data-Science-and-AI-platform/marketing-contract-classification
+
+2. You might need your GitHub username and access token(enter access token whenever password is asked for GitHub in terminal)
+- To setup access token, documentation is available at: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+- make sure the access token is copied and save somewhere else as it is not visible anymore once you leaved the page
+
+3. whenever there are changes made, commited and pushed to the repository from another computer, we need to pull the changes:
+-Run the following command
+$ cd [path to local repository]
+$ git pull
+
+-you also need your GitHub username and access token after these two lines of command
+
+___________________________________________________________________________________________________________________________________________________________
+Login to wandb in terminal: 
+-make sure you created a wandb account via: https://app.wandb.ai/login?signup=true
+
+1. activate miniconda environment by running the command:
+$ source [path to miniconda/bin/activate]
+
+2. run the command:
+$ wandb login
+
+3.You should need your wandb username and api key(available in your wandb account)
+
+
+___________________________________________________________________________________________________________________________________________________________
+
+
+
+
+

@@ -5,21 +5,7 @@ This README file will give an overview of the whole model, the file structures o
 
 
 ________________________________________________________________________________________________________________________________________________________
-Libraries and Python versions:
-
-This model uses:
-1. Python version 3.7.12
-2. TensorFlow version 2.7.0
-3. Huggingface transformers-4.14.1
-4. wandb version 0.12.9
-
-Other Python Libraries required are:
-1. pandas
-2. numpy
-3. openpyxl
-4. sklearn
-5. datetime
-6. sys
+Conda environment is included in environment.yml
 ________________________________________________________________________________________________________________________________________________________
 Model and transformers used:
 1. nlpaueb/bert-base-uncased-contracts (pre-trained model)
@@ -37,11 +23,8 @@ The model also consist of several folders, which are:
 
 1. example: contains the example dataset and guide to run the python scripts with the example dataset
 2. inference: contains the python module and output for inference.py
-3. pre_training: folder for pre-trained model to be saved#######
-4. Dataset: folder that contains all the datasets used in fine-tuning and pre-training
 5. fine_tuning_saved: folder for saving fine-tuned model
 6. modules: folder contains modules for fine-tuning and pre-training
-7. output_result: folder for saving outputs from python scripts
 
 
 ________________________________________________________________________________________________________________________________________________________
@@ -146,7 +129,13 @@ M3 MASSIVE speicfic issues:
 	-in the line for pd.read_excel, define the argument in pd.read_excel, engine='openpyxl'
 
 4. Resource exhaust error
--For V100 GPU, pre-training only allow up until batch size of 16
+-For V100 GPU, pre-training only allow up until batch size of 16(for pre-training)
+
+
+5. https://huggingface.co/nlpaueb/bert-base-uncased-contracts(or similar url) takes too long to response
+-Solutions: wait for a while a resubmit the job
+
+
 
 
 
