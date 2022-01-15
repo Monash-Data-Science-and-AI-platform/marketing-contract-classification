@@ -74,7 +74,7 @@ for i in range(param['epochs']):
   
   output_dict[str(i)]=report_dict
   
-  weighted_average[i]=report_dict['weighted avg']
+  weighted_average[i]=report_dict['weighted avg']['f1-score']
   counter=0
   for key in report_dict:
     f1_scores[counter][i]=report_dict[key]['f1-score']
@@ -82,6 +82,9 @@ for i in range(param['epochs']):
 
     if counter==len(param['keys']):
       break
+  with open(path['raw_data_output_path'],'w') as f:
+    json.dump(output_dict, f, indent = 4)
+    f.close()
 
   model.save_pretrained(path['save_model_path']+"/epoch_"+str(i))#save the model
   config_save=fine_tune_model.get_config()#get the updated config file
