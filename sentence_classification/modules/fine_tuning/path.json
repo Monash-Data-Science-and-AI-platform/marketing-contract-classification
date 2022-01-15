@@ -9,20 +9,20 @@
 
     "tokenizer_path":"ec18_scratch/ilee0022/bert_based_uncased_contracts",
 
-    "model_path":"ec18_scratch/ilee0022/preTrained_model/epoch_0",
+    "model_path":"ec18_scratch/ilee0022/preTrained_model/epoch_14",
 
-    "config_file_path":"ec18_scratch/ilee0022/preTrained_model/epoch_0/config.json",
+    "config_file_path":"ec18_scratch/ilee0022/preTrained_model/epoch_14/config.json",
 
-    "output_file_path":"ec18_scratch/ilee0022/output_result/pt0.txt",
+    "output_file_path":"ec18_scratch/ilee0022/output_result/pt14.txt",
 
-    "graph_output_path":"ec18_scratch/ilee0022/pt_plus_ft_logs/pt0.png",
+    "graph_output_path":"ec18_scratch/ilee0022/pt_plus_ft_logs/pt14.png",
 
-    "raw_data_output_path":"ec18_scratch/ilee0022/output_result/pt0_raw.json",
+    "raw_data_output_path":"ec18_scratch/ilee0022/output_result/pt14_raw.json",
 
     "modules_path":"marketing-contract-classification/sentence_classification/modules/fine_tuning",
 
-    "save_model_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/pt0",
+    "save_model_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/pt14",
 
-    "save_config_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/pt0"
+    "save_config_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/pt14"
 
 }

@@ -104,4 +104,4 @@ plt.title('F1 scores over epochs')
 plt.legend()
 # function to show the plot
 plt.show()
-plt.savefig(path['graph_output_pathh'])
+plt.savefig(path['graph_output_path'])
