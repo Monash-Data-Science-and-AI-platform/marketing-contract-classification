@@ -60,6 +60,7 @@ with open(path['output_file_path'], "w") as f:#output the model's summary
         f.write("\n")
         f.write(" %s" %model.summary(print_fn=lambda x: f.write(x + '\n')))
         f.write("\n")
+        f.close()
 
 epochs=np.arange(0,param['epochs'])
 f1_scores=np.zeros((len(param['keys']),param['epochs']))
