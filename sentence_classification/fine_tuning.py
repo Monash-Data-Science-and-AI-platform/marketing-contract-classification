@@ -55,12 +55,12 @@ optimizer = tf.keras.optimizers.Adam(param['learning_rate'])#define the optimize
 model.compile(optimizer=optimizer, loss=param['loss_function']) #compile the model
 
 with open(path['output_file_path'], "w") as f:#output the model's summary
-        f.write('%s\n' % datetime.datetime.now())
-        f.write("Keys: %s" %param['keys'])
-        f.write("\n")
-        f.write(" %s" %model.summary(print_fn=lambda x: f.write(x + '\n')))
-        f.write("\n")
-        f.close()
+  f.write('%s\n' % datetime.datetime.now())
+  f.write("Keys: %s" %param['keys'])
+  f.write("\n")
+  f.write(" %s" %model.summary(print_fn=lambda x: f.write(x + '\n')))
+  f.write("\n")
+  f.close()
 
 epochs=np.arange(0,param['epochs'])
 f1_scores=np.zeros((len(param['keys']),param['epochs']))
@@ -90,11 +90,6 @@ for i in range(param['epochs']):
   model.save_pretrained(path['save_model_path']+"/epoch_"+str(i))#save the model
   config_save=fine_tune_model.get_config()#get the updated config file
   config_save.save_pretrained(path['save_config_path']+"/epoch_"+str(i))#save the config file
-
-
-with open(path['raw_data_output_path']) as f:
-  json.dump(output_dict, f, indent = 4)
-  f.close()
 
 for i in range(len(f1_scores)):
   plt.plot(epochs, f1_scores[i],label=param['keys'][i])
