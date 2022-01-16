@@ -13,16 +13,18 @@ epochs=np.arange(0,len(data))
 weighted_average=np.zeros(len(data))
 f1_scores=np.zeros((len(keys),len(data)))
 
+epoch=0
 for key in data:
     counter=0
 
     for subkey in data[key]:
         if(counter<len(keys)):
 
-            np.append(f1_scores[counter],data[key][subkey]['f1-score'])
+            f1_scores[counter][epoch]=data[key][subkey]['f1-score']
             counter+=1
 
     weighted_average[int(key)]=data[key]['weighted avg']['f1-score']
+    epoch+=1
 
 print(f1_scores)
 
@@ -40,4 +42,7 @@ plt.title('F1 scores over epochs')
 plt.legend(bbox_to_anchor=(105,0.5),loc='center right')
 # function to show the plot
 plt.show()
-plt.savefig('ec18_scratch/ilee0022/pt_plus_ft_logs/pt14.png')
+plt.subplots_adjust(right=0.7)
+plt.tight_layout(rect=[0,0,0.75,1])
+
+plt.savefig('ec18_scratch/ilee0022/pt_plus_ft_logs/pt14.png',bbox_inches="tight")
