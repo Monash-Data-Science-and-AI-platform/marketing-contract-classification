@@ -22,7 +22,7 @@ for key in data:
             np.append(f1_scores[counter],data[key][subkey]['f1-score'])
             counter+=1
 
-    weighted_average[key]=data[key]['weighted avg']
+    weighted_average[int(key)]=data[key]['weighted avg']
 
 
 
