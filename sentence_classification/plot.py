@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import json
 import numpy as np
 
-data=json.load('ec18_scratch/ilee0022/output_result/pt14_raw.json')
+data=json.loads('ec18_scratch/ilee0022/output_result/pt14_raw.json')
 keys=[
         "DC","CA_1","CA_2","R&R","IE","Flex","None"
 ]
