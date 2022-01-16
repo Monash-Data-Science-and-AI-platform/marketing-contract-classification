@@ -102,7 +102,8 @@ plt.xlabel('epoch')
 plt.ylabel('f1 scores')
 # giving a title to my graph
 plt.title('F1 scores over epochs')
-plt.legend()
+plt.legend(bbox_to_anchor=(1.04,0.5),loc='center right')
 # function to show the plot
 plt.show()
-plt.savefig(path['graph_output_path'])
+
+plt.savefig(path['graph_output_path'],bbox_inches="tight")

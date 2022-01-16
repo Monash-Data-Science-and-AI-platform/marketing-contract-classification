@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import json
 import numpy as np
 
-file=open('ec18_scratch/ilee0022/output_result/pt0_raw.json')
+file=open('ec18_scratch/ilee0022/output_result/pt8_raw.json')
 data=json.load(file)
 file.close()
 keys=[
@@ -43,4 +43,4 @@ plt.legend(bbox_to_anchor=(1.04,0.5),loc='center right')
 # function to show the plot
 plt.show()
 
-plt.savefig('ec18_scratch/ilee0022/pt_plus_ft_logs/pt0.png',bbox_inches="tight")
+plt.savefig('ec18_scratch/ilee0022/pt_plus_ft_logs/pt8.png',bbox_inches="tight")
