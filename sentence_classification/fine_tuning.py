@@ -87,9 +87,10 @@ for i in range(param['epochs']):
     json.dump(output_dict, f, indent = 4)
     f.close()
 
-  model.save_pretrained(path['save_model_path']+"/epoch_"+str(i))#save the model
-  config_save=fine_tune_model.get_config()#get the updated config file
-  config_save.save_pretrained(path['save_config_path']+"/epoch_"+str(i))#save the config file
+  if i<20:
+    model.save_pretrained(path['save_model_path']+"/epoch_"+str(i))#save the model
+    config_save=fine_tune_model.get_config()#get the updated config file
+    config_save.save_pretrained(path['save_config_path']+"/epoch_"+str(i))#save the config file
 
 for i in range(len(f1_scores)):
   plt.plot(epochs, f1_scores[i],label=param['keys'][i])
