@@ -39,10 +39,10 @@ plt.xlabel('epoch')
 plt.ylabel('f1 scores')
 # giving a title to my graph
 plt.title('F1 scores over epochs')
-plt.legend(bbox_to_anchor=(101,0.5),loc='center right')
+plt.legend(bbox_to_anchor=(1.04,0.5),loc='center right')
 # function to show the plot
 plt.show()
-plt.subplots_adjust(right=0.6)
-plt.tight_layout(rect=[0,0,0.6,1])
+plt.subplots_adjust(right=0.7)
+plt.tight_layout(rect=[0,0,0.75,1])
 
 plt.savefig('ec18_scratch/ilee0022/pt_plus_ft_logs/pt14.png',bbox_inches="tight")
