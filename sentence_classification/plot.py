@@ -24,7 +24,7 @@ for key in data:
 
     weighted_average[int(key)]=data[key]['weighted avg']['f1-score']
 
-
+print(f1_scores)
 
 for i in range(len(keys)):
   plt.plot(epochs, f1_scores[i],label=keys[i])
@@ -37,7 +37,7 @@ plt.xlabel('epoch')
 plt.ylabel('f1 scores')
 # giving a title to my graph
 plt.title('F1 scores over epochs')
-plt.legend(bbox_to_anchor=(105,50),loc='center right')
+plt.legend(bbox_to_anchor=(105,0.5),loc='center right')
 # function to show the plot
 plt.show()
 plt.savefig('ec18_scratch/ilee0022/pt_plus_ft_logs/pt14.png')
