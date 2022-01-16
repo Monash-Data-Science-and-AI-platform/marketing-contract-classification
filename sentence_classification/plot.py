@@ -10,7 +10,7 @@ keys=[
 ]
 
 epochs=np.arange(0,len(data))
-weighted_average=np.zeros(0,len(data))
+weighted_average=np.zeros(len(data))
 f1_scores=np.zeros((len(keys),len(data)))
 
 for key in data:
