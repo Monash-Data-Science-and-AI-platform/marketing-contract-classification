@@ -9,7 +9,7 @@
         "R&R"
     ],
 
-    "loss_function":"categorical_crossentropy",
+    "loss_function":"binary_crossentropy",
     
     "shuffle":1000,
     
