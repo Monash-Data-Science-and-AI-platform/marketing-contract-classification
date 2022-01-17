@@ -1,19 +1,19 @@
 {
-    "project_name":"fine_tuning+preTraining",
+    "project_name":"single-class",
     
     "wandb_entity":"ilee0022",
 
     "learning_rate":5e-6,
 
     "keys":[
-        "DC","CA_1","CA_2","R&R","IE","Flex"
+        "DC"
     ],
 
-    "loss_function":"binary_crossentropy",
+    "loss_function":"categorical_crossentropy",
     
     "shuffle":1000,
     
-    "epochs":100,
+    "epochs":50,
 
     "train_batch_size":8,
 
