@@ -101,7 +101,7 @@ plt.xlabel('epoch')
 # naming the y axis
 plt.ylabel('f1 scores')
 # giving a title to my graph
-plt.title('F1 scores over epochs (DC label with no pre-training)')
+plt.title('F1 scores over epochs (CA_1 label with no pre-training)')
 plt.legend(bbox_to_anchor=(1.04,0.5),loc='center right')
 # function to show the plot
 plt.show()
