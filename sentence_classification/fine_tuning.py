@@ -92,10 +92,10 @@ for i in range(param['epochs']):
     json.dump(output_dict, f, indent = 4)
     f.close()
 
-  if i<20:
-    model.save_pretrained(path['save_model_path']+"/epoch_"+str(i))#save the model
-    config_save=fine_tune_model.get_config()#get the updated config file
-    config_save.save_pretrained(path['save_config_path']+"/epoch_"+str(i))#save the config file
+  
+  model.save_pretrained(path['save_model_path']+"/epoch_"+str(i))#save the model
+  config_save=fine_tune_model.get_config()#get the updated config file
+  config_save.save_pretrained(path['save_config_path']+"/epoch_"+str(i))#save the config file}
 
 
 #plot the f1-score for each keys
