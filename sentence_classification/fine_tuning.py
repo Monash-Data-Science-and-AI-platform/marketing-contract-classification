@@ -111,7 +111,7 @@ plt.xlabel(param['xlabel'])
 plt.ylabel(param['ylabel'])
 # giving a title to my graph
 plt.title(param['plot_title'])
-plt.legend(bbox_to_anchor=(1.04,0.5),loc='center right')
+plt.legend(bbox_to_anchor=(1.2,0.5),loc='center right')
 # function to show the plot
 plt.show()
 
