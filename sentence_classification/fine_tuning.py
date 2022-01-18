@@ -55,34 +55,39 @@ optimizer = tf.keras.optimizers.Adam(param['learning_rate'])#define the optimize
 model.compile(optimizer=optimizer, loss=param['loss_function']) #compile the model
 
 with open(path['output_file_path'], "w") as f:#output the model's summary
-  f.write('%s\n' % datetime.datetime.now())
-  f.write("Keys: %s" %param['keys'])
+  f.write('%s\n' % datetime.datetime.now())#output the date and time
+  f.write("Keys: %s" %param['keys'])#output the keys
   f.write("\n")
-  f.write(" %s" %model.summary(print_fn=lambda x: f.write(x + '\n')))
+  f.write(" %s" %model.summary(print_fn=lambda x: f.write(x + '\n')))#print the summary of the model
   f.write("\n")
   f.close()
 
+#initialize variables for plotting and outputting raw datas
 epochs=np.arange(0,param['epochs'])
 f1_scores=np.zeros((len(param['keys']),param['epochs']))
 weighted_average=np.zeros(param['epochs'])
 output_dict={}
 
 print('training started')
+#training
 for i in range(param['epochs']):
   model.fit(train_dataset.shuffle(param['shuffle']).batch(param['train_batch_size']), epochs=1, batch_size=param['train_batch_size'], validation_data=val_dataset.batch(param['val_batch_size']),callbacks=[WandbCallback()],verbose=2)#train the model
   pred=model.predict(val_dataset.batch(param['val_batch_size']),batch_size=param['val_batch_size'])#get the predictions
   report_dict=result_process(pred.logits,val_labels,path['output_file_path'],i)#class to process the result
   
-  output_dict[str(i)]=report_dict
+  output_dict[str(i)]=report_dict#obtain the skm.classification report
   
-  weighted_average[i]=report_dict['weighted avg']['f1-score']
+  weighted_average[i]=report_dict['weighted avg']['f1-score']#get weighted av for plotting
   counter=0
+
+  #extract f1-score for each keys
   for key in report_dict:
     f1_scores[counter][i]=report_dict[key]['f1-score']
     counter+=1
 
     if counter==len(param['keys']):
       break
+  #output the raw data
   with open(path['raw_data_output_path'],'w') as f:
     json.dump(output_dict, f, indent = 4)
     f.close()
@@ -92,18 +97,23 @@ for i in range(param['epochs']):
     config_save=fine_tune_model.get_config()#get the updated config file
     config_save.save_pretrained(path['save_config_path']+"/epoch_"+str(i))#save the config file
 
+
+#plot the f1-score for each keys
 for i in range(len(f1_scores)):
   plt.plot(epochs, f1_scores[i],label=param['keys'][i])
-# naming the x axis
+
+#plot the weighted average
 plt.plot(epochs,weighted_average,label='weighted average')
 
-plt.xlabel('epoch')
+# naming the x axis
+plt.xlabel(param['xlabel'])
 # naming the y axis
-plt.ylabel('f1 scores')
+plt.ylabel(param['ylabel'])
 # giving a title to my graph
-plt.title('F1 scores over epochs (R&R label with no pre-training)')
+plt.title(param['plot_title'])
 plt.legend(bbox_to_anchor=(1.04,0.5),loc='center right')
 # function to show the plot
 plt.show()
 
+#export the graph
 plt.savefig(path['graph_output_path'],bbox_inches="tight")
