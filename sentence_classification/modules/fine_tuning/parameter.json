@@ -6,7 +6,7 @@
     "learning_rate":5e-6,
 
     "keys":[
-        "CA_2"
+        "IE"
     ],
 
     "loss_function":"binary_crossentropy",

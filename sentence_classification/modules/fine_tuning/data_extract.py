@@ -47,6 +47,7 @@ class Data_extract:
     temp_keys=np.append(self.keys,'None')
     
     labels=df[temp_keys].to_numpy()
+    print(labels)
     return labels
 
   def return_text(self,paths):

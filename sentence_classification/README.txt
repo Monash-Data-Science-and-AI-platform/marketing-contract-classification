@@ -69,9 +69,9 @@ Fine-tuning:
 	-define the "project_name" and "wandb_entity"
 	-change "learning_rate" if needed to test on different learning_rate
 	-change "keys" to suite the current experiment(without "None")
-	-in "loss_function":
-		-use "binary_crossentropy" for multi-class classification
-		-use "categorical_crossentropy" for single-class classification
+	-in "loss_function": use "binary_crossentropy" for both multi-class classification and single-class classification
+		-
+		
 	-change "epochs" if needed
 -Then, in modules/fine_tuning/path.json
 	-define the .xlsx file for training in "training_data_path"
@@ -100,13 +100,8 @@ Additonal details for fine-tuning + pre-training:
 ________________________________________________________________________________________________________________________________________________________
 Additonal details for single class labelling vs multi-class labelling
 
--just change the "keys" in modules/fine_tuning/parameter.json to change from one another
--then, most importantly:
-	-in "loss_function":
-		-use "binary_crossentropy" for multi-class classification
-		-use "categorical_crossentropy" for single-class classification
-	
-	
+-change the "keys" in modules/fine_tuning/parameter.json 
+		
 ________________________________________________________________________________________________________________________________________________________
 M3 MASSIVE speicfic issues:
 1. TypeError: Invalid keyword argument(s) in `compile`: {'steps_per_execution'}
