@@ -6,7 +6,7 @@
     "learning_rate":5e-6,
 
     "keys":[
-        "Flex"
+        "DC","CA_1","CA_2","R&R","IE","Flex"
     ],
 
     "loss_function":"binary_crossentropy",
@@ -23,5 +23,5 @@
 
     "ylabel":"f1-scores",
 
-    "plot_title":"Flex No pre-training f1-score against epoch"
+    "plot_title":"multi-label(scaled_weight) No pre-training f1-score against epoch"
 }

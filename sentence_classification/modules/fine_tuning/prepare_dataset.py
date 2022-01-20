@@ -36,4 +36,17 @@ class Prepare_dataset:
 
         return self.prepare_dataset(self.val_features,self.val_labels)
 
+    def get_class_weight(self):
+        train_labels_trans=np.transpose(self.train_labels)
+
+        total_labels=np.sum(self.train_labels)
+        unscaled_weight=1/(np.sum(train_labels_trans,axis=1)/total_labels)
+        scaled_weight=unscaled_weight/unscaled_weight.min()
+        normalized_weight=scaled_weight/scaled_weight.sum()
+        class_weights={}
+        for i in range(len(normalized_weight)):
+            class_weights[i]=normalized_weight[i]
+
+        return class_weights
+
 

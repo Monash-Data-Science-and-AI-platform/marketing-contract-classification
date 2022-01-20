@@ -48,6 +48,7 @@ val_labels=extract.val_labels()#labels for validation sentences
 dataset_processor=Prepare_dataset(path['tokenizer_path'],train_features,val_features,train_labels,val_labels)
 val_dataset=dataset_processor.get_val_dataset()#get the validation dataset
 train_dataset=dataset_processor.get_train_dataset()#get the training dataset
+class_weights=dataset_processor.get_class_weight()
 
 fine_tune_model=Fine_tune_model(path['model_path'],path['config_file_path'],param['keys'])#define class that handles the initialization of model
 model=fine_tune_model.get_model()#get the model
@@ -71,7 +72,7 @@ output_dict={}
 print('training started')
 #training
 for i in range(param['epochs']):
-  model.fit(train_dataset.shuffle(param['shuffle']).batch(param['train_batch_size']), epochs=1, batch_size=param['train_batch_size'], validation_data=val_dataset.batch(param['val_batch_size']),callbacks=[WandbCallback()],verbose=2)#train the model
+  model.fit(train_dataset.shuffle(param['shuffle']).batch(param['train_batch_size']), epochs=1, batch_size=param['train_batch_size'],class_weight=class_weights, validation_data=val_dataset.batch(param['val_batch_size']),callbacks=[WandbCallback()],verbose=2)#train the model
   pred=model.predict(val_dataset.batch(param['val_batch_size']),batch_size=param['val_batch_size'])#get the predictions
   report_dict=result_process(pred.logits,val_labels,path['output_file_path'],i)#class to process the result
   
