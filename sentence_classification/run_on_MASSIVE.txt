@@ -79,6 +79,8 @@ show_job // show all jobs being submitted
 
 cd //go to certain directories
 
+cd -   //go back to previous directory
+
 git pull //pull changes from remote repository
 
 sbatch slurm-gpu-job-script //submit slurm job script
