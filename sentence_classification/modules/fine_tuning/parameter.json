@@ -6,7 +6,7 @@
     "learning_rate":1e-5,
 
     "keys":[
-        "DC"
+        "R&R"
     ],
 
     "loss_function":"binary_crossentropy",
@@ -23,5 +23,5 @@
 
     "ylabel":"f1-scores",
 
-    "plot_title":"DC(scaled_weight) No pre-training f1-score against epoch"
+    "plot_title":"R&R(scaled_weight) No pre-training f1-score against epoch"
 }

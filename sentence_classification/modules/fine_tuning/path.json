@@ -13,16 +13,16 @@
 
     "config_file_path":"ec18_scratch/ilee0022/bert_based_uncased_contracts/config.json",
 
-    "output_file_path":"ec18_scratch/ilee0022/output_result/no_pt_DC(scaled_weight).txt",
+    "output_file_path":"ec18_scratch/ilee0022/output_result/no_pt_R&R(scaled_weight).txt",
 
-    "graph_output_path":"ec18_scratch/ilee0022/pt_plus_ft_logs/no_pt_DC((scaled_weight).png",
+    "graph_output_path":"ec18_scratch/ilee0022/pt_plus_ft_logs/no_pt_R&R(scaled_weight).png",
 
-    "raw_data_output_path":"ec18_scratch/ilee0022/output_result/no_pt_DC((scaled_weight).json",
+    "raw_data_output_path":"ec18_scratch/ilee0022/output_result/no_pt_R&R(scaled_weight).json",
 
     "modules_path":"marketing-contract-classification/sentence_classification/modules/fine_tuning",
 
-    "save_model_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/no_pt_DC((scaled_weight)",
+    "save_model_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/no_pt_R&R(scaled_weight)",
 
-    "save_config_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/no_pt_DC((scaled_weight)"
+    "save_config_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/no_pt_R&R(scaled_weight)"
 
 }
