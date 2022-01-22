@@ -59,6 +59,8 @@ with open(path['output_file_path'], "w") as f:#output the model's summary
   f.write('%s\n' % datetime.datetime.now())#output the date and time
   f.write("Keys: %s" %param['keys'])#output the keys
   f.write("\n")
+  f.write("Learning rate: %s" %param['learning_rate'])#output the keys
+  f.write("\n")
   f.write(" %s" %model.summary(print_fn=lambda x: f.write(x + '\n')))#print the summary of the model
   f.write("\n")
   f.close()
