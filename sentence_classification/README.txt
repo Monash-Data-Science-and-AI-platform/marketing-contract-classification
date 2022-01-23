@@ -75,6 +75,7 @@ Fine-tuning:
 	-change "learning_rate" if needed to test on different learning_rate
 	-change "keys" to suite the current experiment(with/without "None")(code will check whether there is "None" or not, if not, it will append it automatically)
 	-in "loss_function": use "binary_crossentropy" for both multi-class classification and single-class classification
+	-in "weighted" set 0 if test for balanced class weight, and 1 if testing for class weight inversely proportional to class size
 	-change the graph parameters:
 		-"xlabel": label for x-axis of the output graph
 		-"ylabel": label for y-axis of the output graph
@@ -114,40 +115,7 @@ Additonal details for single class labelling vs multi-class labelling
 
 -change the "keys" in modules/fine_tuning/parameter.json from multi-label to single-label( example: "keys":["DC","IE","None"] to "keys":["DC"])
 		
-________________________________________________________________________________________________________________________________________________________
-M3 MASSIVE speicfic issues:
-1. TypeError: Invalid keyword argument(s) in `compile`: {'steps_per_execution'}
--This is due to the default tensorflow-gpu 2.2.0 does not support {'steps_per_execution'} in model.fit()
--Solution:
-	-download tensorflow-gpu 2.4.0 or later version of tensorflow
-	-in the slurm-gpu-job-script:
-		-module unload cuda
-		-module load cuda/11.0 
-	#tensorflow-gpu 2.4.0 requires cuda 11.0, if other version of tensorflow is used, please refer to https://www.tensorflow.org/install/source#tested_build_configurations
-	#to get the correct cuda version
 
-2. Weird [Errno 2] No such file or directory or ModuleNotFoundError (even though module is installed in miniconda)
--Solution: Do not define module load tensorflow in slurm-gpu-job-script
-
-3. unable to read .xlsx fie
--Solutions: 
-	-install openpyxl in miniconda
-	-In the .py file, define:  import openpyxl
-	-in the line for pd.read_excel, define the argument in pd.read_excel, engine='openpyxl'
-
-4. Resource exhaust error
--For V100 GPU, pre-training only allow up until batch size of 16(for pre-training)
-
-
-5. https://huggingface.co/nlpaueb/bert-base-uncased-contracts(or similar url) takes too long to response
--Solutions: wait for a while a resubmit the job
-
-6. The command /usr/local/sv2/dev/jupyter/jupyter_params.py {jobid} on host m3t102 timed out. Is the application server OK?
-   Attempting to create an SSH tunnel tom3t101 via m3.massive.org.au unexpectedly returned an error message. Please report this via the contact us link. The error message was Unable to create the secure tunnel. Please try again.
--Solutions: 	-wait for a while after launching the jupyter lab, and then click connect
-		-if error message pops-up, click connect again, repeat until you connected to the jupyter lab
-
--reasons: jupyter process is very slow to startup. The job begins but it takes some time before the server is actually running
 
 
 

@@ -48,7 +48,12 @@ val_labels=extract.val_labels()#labels for validation sentences
 dataset_processor=Prepare_dataset(path['tokenizer_path'],train_features,val_features,train_labels,val_labels)
 val_dataset=dataset_processor.get_val_dataset()#get the validation dataset
 train_dataset=dataset_processor.get_train_dataset()#get the training dataset
-class_weights=dataset_processor.get_class_weight()
+
+#set the class weight based on the parameter.json
+if (param['weighted']==0):
+  class_weights=None#if 0, set the class weight as none(balanced class weight)
+else:
+  class_weights=dataset_processor.get_class_weight()#else, generate class weight as inversely proportional to the class size
 
 fine_tune_model=Fine_tune_model(path['model_path'],path['config_file_path'],param['keys'])#define class that handles the initialization of model
 model=fine_tune_model.get_model()#get the model
