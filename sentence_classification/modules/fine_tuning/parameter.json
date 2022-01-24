@@ -6,7 +6,7 @@
     "learning_rate":5e-6,
 
     "keys":[
-        "DC","CA_1","CA_2","R&R","IE","Flex","None"
+        "DC","CA_1","CA_2","R&R","IE","Flex"
     ],
 
     "weighted":1,

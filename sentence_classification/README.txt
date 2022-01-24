@@ -73,7 +73,7 @@ Fine-tuning:
 -First, in modules/fine_tuning/parameter.json
 	-define the "project_name" and "wandb_entity"
 	-change "learning_rate" if needed to test on different learning_rate
-	-change "keys" to suite the current experiment(with/without "None")(code will check whether there is "None" or not, if not, it will append it automatically)
+	-change "keys" to suite the current experiment*************(without "None")************
 	-in "loss_function": use "binary_crossentropy" for both multi-class classification and single-class classification
 	-in "weighted" set 0 if test for balanced class weight, and 1 if testing for class weight inversely proportional to class size
 	-change the graph parameters:

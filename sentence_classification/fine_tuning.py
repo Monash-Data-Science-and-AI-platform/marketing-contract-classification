@@ -47,9 +47,10 @@ val_labels=extract.val_labels()#labels for validation sentences
 train_labels_trans=np.transpose(train_labels)#transpose the matrix
 train_labels_count=np.sum(train_labels_trans,axis=1)
 train_label_summary={}
+keys=param['keys']+['None']
 
 for i in range(len(train_labels_count)):
-  train_label_summary[param['keys'][i]]=train_labels_count[i]
+  train_label_summary[keys[i]]=train_labels_count[i]
 
 #define a class object that handles the processing of sentences and label to dataset
 dataset_processor=Prepare_dataset(path['tokenizer_path'],train_features,val_features,train_labels,val_labels)
