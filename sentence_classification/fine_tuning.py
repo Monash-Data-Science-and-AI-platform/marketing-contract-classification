@@ -44,6 +44,13 @@ train_labels=extract.train_labels()#label for training sentences
 val_features=extract.val_text()#sentences for validation
 val_labels=extract.val_labels()#labels for validation sentences
 
+train_labels_trans=np.transpose(train_labels)#transpose the matrix
+train_labels_count=np.sum(train_labels_trans,axis=1)
+train_label_summary={}
+
+for i in range(len(train_labels_count)):
+  train_label_summary[param['keys'][i]]=train_labels_count[i]
+
 #define a class object that handles the processing of sentences and label to dataset
 dataset_processor=Prepare_dataset(path['tokenizer_path'],train_features,val_features,train_labels,val_labels)
 val_dataset=dataset_processor.get_val_dataset()#get the validation dataset
@@ -66,6 +73,8 @@ output_folder_path=path['output_folder_path']+"/"+param['project_name']+"/"+str(
 with open(output_folder_path+'/result.txt', "w") as f:#output the model's summary
   f.write('%s\n' % now.strftime("%d/%m/%Y %H:%M:%S"))#output the date and time
   f.write("Keys: %s" %param['keys'])#output the keys
+  f.write("\n")
+  f.write(json.dumps(train_label_summary))
   f.write("\n")
   f.write("Learning rate: %s" %param['learning_rate'])#output the keys
   f.write("\n")

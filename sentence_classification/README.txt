@@ -82,12 +82,15 @@ Fine-tuning:
 		-"title": title	for the output graph
 		
 	-change "epochs" if needed
+
 -Then, in modules/fine_tuning/path.json
 	-define the .xlsx file for training in "training_data_path"
 	-and .xlsx file for validation in "validation_data_path"
-	-change "output_file_path" to the desired .txt file for the result to output
-	-change "graph_output_path" to the desired .png file to output the graph
-	-change "raw_data_output_path" to the desired .json file to output the raw data in json format
+	-change "output_folder_path" to the desired path to the output folder,where:
+		-a result.txt contains model summary, classification report and confusion matrix
+		-a raw_data.json containing raw data from classification report for plotting
+		-a result_graph.png containing the graph f1-scores against epochs
+	
 	-change "save_model_path" and "save_config_path" to the desired path for the model and its config.json to save
 	-make sure that both "save_model_path" and "save_config_path" are paths to a folder but not specific file
 
@@ -115,8 +118,14 @@ Additonal details for single class labelling vs multi-class labelling
 
 -change the "keys" in modules/fine_tuning/parameter.json from multi-label to single-label( example: "keys":["DC","IE","None"] to "keys":["DC"])
 		
+________________________________________________________________________________________________________________________________________________________
+Plotting:
 
+1. activate the conda environment by running the command:
+$ source [path to miniconda]/miniconda/bin/activate 
 
+2. then run the command:
+$ python [path to plot.py]
 
 
 
