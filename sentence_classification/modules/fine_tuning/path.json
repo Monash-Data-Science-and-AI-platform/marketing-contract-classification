@@ -1,10 +1,10 @@
 {
     "training_data_path":[
-        "ec18_scratch/ilee0022/Labeled Training Dataset_Manually Coded Contracts/labeled 2 contracts combined.xlsx"
+        "ec18_scratch/ilee0022/Labeled Training Dataset_Manually Coded Contracts/training_dataset.xlsx"
     ],
 
     "validation_data_path":[
-        "ec18_scratch/ilee0022/Labeled Training Dataset_Manually Coded Contracts/186 Arthur Rutenberg Homes coded.xlsx"
+        "eec18_scratch/ilee0022/Labeled Training Dataset_Manually Coded Contracts/validation_dataset.xlsx"
     ],
 
     "tokenizer_path":"ec18_scratch/ilee0022/bert_based_uncased_contracts",
