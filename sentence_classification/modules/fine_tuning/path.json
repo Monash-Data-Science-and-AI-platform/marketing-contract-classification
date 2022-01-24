@@ -4,7 +4,7 @@
     ],
 
     "validation_data_path":[
-        "eec18_scratch/ilee0022/Labeled Training Dataset_Manually Coded Contracts/validation_dataset.xlsx"
+        "ec18_scratch/ilee0022/Labeled Training Dataset_Manually Coded Contracts/validation_dataset.xlsx"
     ],
 
     "tokenizer_path":"ec18_scratch/ilee0022/bert_based_uncased_contracts",
