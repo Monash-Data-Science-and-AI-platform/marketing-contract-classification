@@ -63,7 +63,7 @@ model.compile(optimizer=optimizer, loss=param['loss_function']) #compile the mod
 now = datetime.datetime.now()
 output_folder_path=path['output_folder_path']+"/"+param['project_name']+"/"+str(now.strftime("%d/%m/%Y %H:%M:%S"))
 
-with open(output_folder_path+'.txt', "w") as f:#output the model's summary
+with open(output_folder_path+'/result.txt', "w") as f:#output the model's summary
   f.write('%s\n' % now.strftime("%d/%m/%Y %H:%M:%S"))#output the date and time
   f.write("Keys: %s" %param['keys'])#output the keys
   f.write("\n")
@@ -84,7 +84,7 @@ print('training started')
 for i in range(param['epochs']):
   model.fit(train_dataset.shuffle(param['shuffle']).batch(param['train_batch_size']), epochs=1, batch_size=param['train_batch_size'],class_weight=class_weights, validation_data=val_dataset.batch(param['val_batch_size']),callbacks=[WandbCallback()],verbose=2)#train the model
   pred=model.predict(val_dataset.batch(param['val_batch_size']),batch_size=param['val_batch_size'])#get the predictions
-  report_dict=result_process(pred.logits,val_labels,output_folder_path+'.txt',i)#class to process the result
+  report_dict=result_process(pred.logits,val_labels,output_folder_path+'/result.txt',i)#class to process the result
   
   output_dict[str(i)]=report_dict#obtain the skm.classification report
   
@@ -99,7 +99,7 @@ for i in range(param['epochs']):
     if counter==len(param['keys']):
       break
   #output the raw data
-  with open(output_folder_path+'.json','w') as f:
+  with open(output_folder_path+'/raw_data.json','w') as f:
     json.dump(output_dict, f, indent = 4)
     f.close()
 
@@ -127,4 +127,4 @@ plt.legend(bbox_to_anchor=(1.5,0.5),loc='center right')
 plt.show()
 
 #export the graph
-plt.savefig(output_folder_path+'.png',bbox_inches="tight")
+plt.savefig(output_folder_path+'/result_graph.png',bbox_inches="tight")

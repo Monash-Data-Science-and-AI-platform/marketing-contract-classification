@@ -39,6 +39,29 @@ $ cd [path to local repository]
 $ git pull
 
 -you also need your GitHub username and access token after these two lines of command
+___________________________________________________________________________________________________________________________________________________________
+Update code to GitHub repository
+1. in terminal, run the command:
+$ cd [path to local repository]
+
+2. run the command:
+$ git add [path to the file modified]       (without the local repository path)
+
+3. add all the modified files by running step 2
+
+4. run the command:
+$ git commit
+
+and , then press enter
+
+5. write the commit message:
+- press esc , then i
+-write the command at the blank space on top
+-then press esc, then :wq
+
+6. run the command:
+-$ git push
+-type in your GitHub username and then your GitHub personal access token
 
 ___________________________________________________________________________________________________________________________________________________________
 Login to wandb in terminal: 
@@ -85,6 +108,7 @@ git pull //pull changes from remote repository
 
 sbatch slurm-gpu-job-script //submit slurm job script
 
+ctrl+c //force stop 
 ________________________________________________________________________________________________________________________________________________________
 M3 MASSIVE speicfic issues:
 1. TypeError: Invalid keyword argument(s) in `compile`: {'steps_per_execution'}
