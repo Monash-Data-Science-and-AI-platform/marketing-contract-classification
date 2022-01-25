@@ -9,6 +9,7 @@ from wandb.keras import WandbCallback
 import sys
 import datetime
 import matplotlib.pyplot as plt
+import os
 
 #open the json file that contains all the path and parameters
 param_file=open('marketing-contract-classification/sentence_classification/modules/fine_tuning/parameter.json')
@@ -69,13 +70,15 @@ optimizer = tf.keras.optimizers.Adam(param['learning_rate'])#define the optimize
 model.compile(optimizer=optimizer, loss=param['loss_function']) #compile the model
 
 now = datetime.datetime.now()
-output_folder_path=path['output_folder_path']+"/"+param['project_name']+"/"+str(now.strftime("%d/%m/%Y %H:%M:%S"))
+output_folder_path=path['output_folder_path']+"/"+param['project_name']+"/"+str(now.strftime("%d.%m.%Y %H:%M:%S"))
+os.makedirs(output_folder_path,exist_ok=True)
+
 
 with open(output_folder_path+'/result.txt', "w") as f:#output the model's summary
   f.write('%s\n' % now.strftime("%d/%m/%Y %H:%M:%S"))#output the date and time
   f.write("Keys: %s" %param['keys'])#output the keys
   f.write("\n")
-  f.write(json.dumps(train_label_summary))
+  f.write(str(train_label_summary))
   f.write("\n")
   f.write("Learning rate: %s" %param['learning_rate'])#output the keys
   f.write("\n")
