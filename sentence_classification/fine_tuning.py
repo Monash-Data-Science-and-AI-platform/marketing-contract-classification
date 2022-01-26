@@ -75,15 +75,12 @@ os.makedirs(output_folder_path,exist_ok=True)
 
 
 with open(output_folder_path+'/result.txt', "w") as f:#output the model's summary
+  f.write('%s\n' %param['project_name'])
   f.write('%s\n' % now.strftime("%d/%m/%Y %H:%M:%S"))#output the date and time
-  f.write("Keys: %s" %param['keys'])#output the keys
-  f.write("\n")
-  f.write(str(train_label_summary))
-  f.write("\n")
-  f.write("Learning rate: %s" %param['learning_rate'])#output the keys
-  f.write("\n")
-  f.write(" %s" %model.summary(print_fn=lambda x: f.write(x + '\n')))#print the summary of the model
-  f.write("\n")
+  f.write("Keys: %s\n" %param['keys'])#output the keys
+  f.write(str(train_label_summary)+" \n")
+  f.write("Learning rate: %s\n" %param['learning_rate'])#output the keys
+  f.write(" %s\n" %model.summary(print_fn=lambda x: f.write(x + '\n')))#print the summary of the model
   f.close()
 
 #initialize variables for plotting and outputting raw datas

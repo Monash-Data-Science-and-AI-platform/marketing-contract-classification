@@ -1,5 +1,5 @@
 {
-    "project_name":"multi-class pre-training epoch 15",
+    "project_name":"multi-class no pre-training",
     
     "wandb_entity":"ilee0022",
 
@@ -9,7 +9,7 @@
         "DC","CA_1","CA_2","R&R","IE","Flex"
     ],
 
-    "weighted":1,
+    "weighted":0,
 
     "loss_function":"binary_crossentropy",
     
@@ -25,7 +25,7 @@
 
     "ylabel":"f1-scores",
 
-    "plot_title":"Multi-label 15 epoch pre-training f1-score against epoch(scaled weight)"
+    "plot_title":"Multi-label no pre-training f1-score against epoch(unscaled weight)"
 
 
 }
