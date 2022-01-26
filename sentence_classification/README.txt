@@ -59,6 +59,7 @@ Inferencing:
 
 -for inferencing, in inference/inference.json:
 -change "keys" to the keys suited to the fine-tuned model, the current fine-tuned model support keys of "DC","CA_1","CA_2","R&R","IE","Flex","None"
+***make sure the keys are in the correct order similar in the keys in the fine_tuning/parameter.json, and "None" is at the end of the array
 -change the "data_file_path" to the .xlsx or .csv file containing the sentences for inferencing
 -if the inferencing model is changed:
 	-change "model_path" to the .h5 file which the fine-tuned model is saved

@@ -11,9 +11,9 @@
 
     "tokenizer_path":"ec18_scratch/ilee0022/bert_based_uncased_contracts",
 
-    "model_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/pt14/epoch_4/tf_model.h5",
+    "model_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/new_dataset/multi_label_no_pt/epoch_18/tf_model.h5",
 
-    "config_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/pt14/epoch_4/config.json",
+    "config_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/new_dataset/multi_label_no_pt/epoch_18/config.json",
 
     "output_path":"ec18_scratch/ilee0022/inference_output/inference_output_1.csv",
 
