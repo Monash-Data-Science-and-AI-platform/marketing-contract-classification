@@ -132,6 +132,8 @@ plt.ylabel(param['ylabel'])
 #changing the resolution of both axes
 plt.xticks(np.arange(0,101, 5.0)) 
 plt.yticks(np.arange(0,1.01, 0.05)) 
+#add grid to the plot
+plt.grid()
 # giving a title to my graph
 plt.title(param['plot_title'])
 plt.legend(bbox_to_anchor=(1.5,0.5),loc='center right')
