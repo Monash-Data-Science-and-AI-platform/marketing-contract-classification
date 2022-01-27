@@ -45,8 +45,7 @@ train_labels=extract.train_labels()#label for training sentences
 val_features=extract.val_text()#sentences for validation
 val_labels=extract.val_labels()#labels for validation sentences
 
-train_labels_trans=np.transpose(train_labels)#transpose the matrix
-train_labels_count=np.sum(train_labels_trans,axis=1)
+train_labels_count=np.sum(train_labels,axis=0)
 train_label_summary={}
 keys=param['keys']+['None']
 
@@ -130,11 +129,13 @@ plt.plot(epochs,weighted_average,label='weighted average')
 plt.xlabel(param['xlabel'])
 # naming the y axis
 plt.ylabel(param['ylabel'])
+#changing the resolution of both axes
+plt.xticks( range(0,100,5) ) 
+plt.yticks( range(0,1,0.05) ) 
 # giving a title to my graph
 plt.title(param['plot_title'])
 plt.legend(bbox_to_anchor=(1.5,0.5),loc='center right')
 # function to show the plot
 plt.show()
-
 #export the graph
 plt.savefig(output_folder_path+'/result_graph.png',bbox_inches="tight")

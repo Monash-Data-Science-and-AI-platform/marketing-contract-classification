@@ -43,6 +43,9 @@ plt.plot(epochs,weighted_average,label='weighted av')
 plt.xlabel(param['xlabel'])
 # naming the y axis
 plt.ylabel(param['ylabel'])
+#changing the resolution of both axes
+plt.xticks( range(0,100,5) ) 
+plt.yticks( range(0,1,0.05) ) 
 # giving a title to my graph
 plt.title(param['title'])#add the pre-training epoch
 plt.legend(bbox_to_anchor=(1.5,0.5),loc='center right')
