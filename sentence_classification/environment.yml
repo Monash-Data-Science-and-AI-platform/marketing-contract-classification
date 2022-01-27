@@ -1,6 +1,7 @@
 name: base
 channels:
   - huggingface
+  - esri
   - intel
   - anaconda
   - conda-forge
@@ -24,13 +25,13 @@ dependencies:
   - brotlipy=0.7.0=py38h27cfd23_1003
   - bs4=4.10.0=hd8ed1ab_0
   - c-ares=1.17.1=h27cfd23_0
-  - ca-certificates=2021.10.8=ha878542_0
+  - ca-certificates=2021.10.26=h06a4308_2
   - cachetools=4.2.2=pyhd3eb1b0_0
-  - certifi=2021.10.8=py38h578d9bd_1
+  - certifi=2021.10.8=py38h06a4308_2
   - cffi=1.14.6=py38h400218f_0
   - charset-normalizer=2.0.4=pyhd3eb1b0_0
   - click=7.1.2=pyhd3eb1b0_0
-  - conda=4.11.0=py38h578d9bd_0
+  - conda=4.11.0=py38h06a4308_0
   - conda-package-handling=1.7.3=py38h27cfd23_1
   - configparser=5.0.2=pyhd3eb1b0_0
   - cryptography=3.4.8=py38hd23ed53_0
@@ -156,6 +157,7 @@ dependencies:
   - tensorboard=2.4.0=pyhc547734_0
   - tensorboard-plugin-wit=1.6.0=py_0
   - tensorflow=2.4.1=gpu_py38h8a7d6ce_0
+  - tensorflow-addons=0.13.0=py38_1
   - tensorflow-base=2.4.1=gpu_py38h29c2da4_0
   - tensorflow-estimator=2.6.0=pyh7b7c402_0
   - tensorflow-gpu=2.4.1=h30adc30_0
@@ -166,6 +168,7 @@ dependencies:
   - tornado=6.1=py38h497a2fe_1
   - tqdm=4.62.3=pyhd3eb1b0_1
   - transformers=4.11.3=py_0
+  - typeguard=2.12.1=py_0
   - typing-extensions=3.10.0.2=hd3eb1b0_0
   - typing_extensions=3.10.0.2=pyh06a4308_0
   - urllib3=1.26.7=pyhd3eb1b0_0

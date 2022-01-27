@@ -10,6 +10,7 @@ import sys
 import datetime
 import matplotlib.pyplot as plt
 import os
+import tensorflow_addons as tfa
 
 #open the json file that contains all the path and parameters
 param_file=open('marketing-contract-classification/sentence_classification/modules/fine_tuning/parameter.json')
@@ -66,7 +67,7 @@ else:
 fine_tune_model=Fine_tune_model(path['model_path'],path['config_file_path'],param['keys'])#define class that handles the initialization of model
 model=fine_tune_model.get_model()#get the model
 optimizer = tf.keras.optimizers.Adam(param['learning_rate'])#define the optimizer
-model.compile(optimizer=optimizer, loss=param['loss_function']) #compile the model
+model.compile(optimizer=optimizer, loss=tfa.losses.SigmoidFocalCrossEntropy()) #compile the model
 
 now = datetime.datetime.now()
 output_folder_path=path['output_folder_path']+"/"+param['project_name']+"/"+str(now.strftime("%d.%m.%Y %H:%M:%S"))
