@@ -1,4 +1,4 @@
-README:
+README
 ________________________________________________________________________________________________________________________________________________________
 Summary:
 This README file will give an overview of the whole model, the file structures of this model, and the ways to fine-tune and pre-train the model
