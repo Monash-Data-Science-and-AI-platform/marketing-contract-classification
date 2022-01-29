@@ -9,9 +9,9 @@
         "R&R"
     ],
 
-    "weighted":1,
+    "weighted":0,
 
-    "loss_function":"binary_crossentropy",
+    "loss_function":"sigmoid_focal_crossentropy",
     
     "shuffle":1000,
     
@@ -25,7 +25,7 @@
 
     "ylabel":"f1-scores",
 
-    "plot_title":"Binary label no pre-training f1-score against epoch(scaled weight)"
+    "plot_title":"Binary label R&R no pre-training f1-score against epoch(scaled weight)"
 
 
 }

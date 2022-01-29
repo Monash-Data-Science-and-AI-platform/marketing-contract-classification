@@ -67,8 +67,15 @@ else:
 fine_tune_model=Fine_tune_model(path['model_path'],path['config_file_path'],param['keys'])#define class that handles the initialization of model
 model=fine_tune_model.get_model()#get the model
 optimizer = tf.keras.optimizers.Adam(param['learning_rate'])#define the optimizer
-model.compile(optimizer=optimizer, loss=param['loss_function']) #compile the model
-#tfa.losses.SigmoidFocalCrossEntropy()
+
+if (param['loss_function'])=='sigmoid_focal_crossentropy':
+  loss=tfa.losses.SigmoidFocalCrossEntropy()
+else:
+  loss=param['loss_function']
+
+model.compile(optimizer=optimizer, loss=loss) #compile the model
+
+
 now = datetime.datetime.now()
 output_folder_path=path['output_folder_path']+"/"+param['project_name']+"/"+str(now.strftime("%d.%m.%Y %H:%M:%S"))
 os.makedirs(output_folder_path,exist_ok=True)
