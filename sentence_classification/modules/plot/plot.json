@@ -3,13 +3,13 @@
 
     "ylabel":"f1-scores",
 
-    "title":"Multi-label no pre-training f1-scores against epochs",
+    "title":"Binary-label R&R no pre-training f1-scores against epochs(focal)",
 
     "keys":[
         "R&R","None"
     ],
 
-    "raw_data_file_path":"ec18_scratch/ilee0022/experiment_output/multi-class no pre-training/26.01.2022 21:09:29/raw_data.json",
+    "raw_data_file_path":"ec18_scratch/ilee0022/experiment_output/binary-class no pre-training/29.01.2022 02:27:00/raw_data.json",
 
-    "save_figure_path":"ec18_scratch/ilee0022/experiment_output/multi-class no pre-training/26.01.2022 21:09:29/result_graph.png"
+    "save_figure_path":"ec18_scratch/ilee0022/experiment_output/binary-class no pre-training/29.01.2022 02:27:00/result_graph.png"
 }

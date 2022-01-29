@@ -6,7 +6,7 @@
     "learning_rate":5e-6,
 
     "keys":[
-        "CA_2"
+        "IE"
     ],
 
     "weighted":0,
@@ -25,7 +25,7 @@
 
     "ylabel":"f1-scores",
 
-    "plot_title":"Binary label CA_2 no pre-training f1-score against epoch(focal)"
+    "plot_title":"Binary label IE no pre-training f1-score against epoch(focal)"
 
 
 }
