@@ -96,6 +96,13 @@ sbatch slurm-gpu-job-script
 -more info in: example slurm-gpu-job-script.txt and slurm-gpu-job-script guide.txt
 
 ___________________________________________________________________________________________________________________________________________________________
+Important notes for submitting multiple job at a time on MASSIVE
+1. check the .out file specified in slurm job script, make sure 'training started' is printed in the file before Pulling
+new codes from GitHub or make any changes to local codes 
+
+--> This applies to both fine_tuning.py, pre_training.py and inference.py
+
+___________________________________________________________________________________________________________________________________________________________
 
 Common command used in MASSIVE terminal:
 
