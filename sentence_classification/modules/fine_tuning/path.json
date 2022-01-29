@@ -17,7 +17,7 @@
 
     "modules_path":"marketing-contract-classification/sentence_classification/modules/fine_tuning",
 
-    "save_model_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/new_dataset/binary_label_R&R_no_pt_weighted"
+    "save_model_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/new_dataset/binary_label_DC_no_pt_focal"
 
 
 }
