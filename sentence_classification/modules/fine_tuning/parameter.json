@@ -1,5 +1,5 @@
 {
-    "project_name":"multi-class pre-training epoch 1",
+    "project_name":"multi-class pre-training epoch 9",
     
     "wandb_entity":"ilee0022",
 
@@ -25,7 +25,7 @@
 
     "ylabel":"f1-scores",
 
-    "plot_title":"Multi-label 1 epoch pre-training f1-score against epoch(focal loss)"
+    "plot_title":"Multi-label 9 epochs pre-training f1-score against epoch(focal loss)"
 
 
 }
