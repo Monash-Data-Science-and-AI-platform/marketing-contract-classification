@@ -9,15 +9,15 @@
 
     "tokenizer_path":"ec18_scratch/ilee0022/bert_based_uncased_contracts",
 
-    "model_path":"ec18_scratch/ilee0022/preTrained_model/epoch_8",
+    "model_path":"ec18_scratch/ilee0022/preTrained_model/epoch_0",
 
-    "config_file_path":"ec18_scratch/ilee0022/preTrained_model/epoch_8",
+    "config_file_path":"ec18_scratch/ilee0022/preTrained_model/epoch_0",
 
     "output_folder_path":"ec18_scratch/ilee0022/experiment_output",
 
     "modules_path":"marketing-contract-classification/sentence_classification/modules/fine_tuning",
 
-    "save_model_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/new_dataset/multi_label_8_pt_focal"
+    "save_model_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/new_dataset/multi_label_0_pt_focal"
 
 
 }
