@@ -23,6 +23,23 @@ class Prepare_dataset:
 
         return dataset
 
+    def label_summary(self,labels):
+        labels_count=np.sum(labels,axis=0)
+        label_summary={}
+        keys=self.keys+['None']
+
+        for i in range(len(labels_count)):
+            label_summary[keys[i]]=labels_count[i]
+
+        return label_summary
+
+    def get_train_dataset_summary(self):
+
+        return self.label_summary(self.train_labels)
+
+    def get_val_dataset_summary(self):
+
+        return self.label_summary(self.val_labels)
 
     def np_to_tensor(self,arg):#method to convert list/nparray to tf tensor
         arg = tf.convert_to_tensor(arg, dtype=tf.float32)

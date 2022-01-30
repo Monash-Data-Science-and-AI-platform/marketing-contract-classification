@@ -46,12 +46,8 @@ train_labels=extract.train_labels()#label for training sentences
 val_features=extract.val_text()#sentences for validation
 val_labels=extract.val_labels()#labels for validation sentences
 
-train_labels_count=np.sum(train_labels,axis=0)
-train_label_summary={}
-keys=param['keys']+['None']
-
-for i in range(len(train_labels_count)):
-  train_label_summary[keys[i]]=train_labels_count[i]
+train_dataset_summary=extract.get_train_dataset_summary()
+val_dataset_summary=extract.get_val_dataset_summary()
 
 #define a class object that handles the processing of sentences and label to dataset
 dataset_processor=Prepare_dataset(path['tokenizer_path'],train_features,val_features,train_labels,val_labels)
@@ -76,25 +72,26 @@ else:
 model.compile(optimizer=optimizer, loss=loss) #compile the model
 
 
-now = datetime.datetime.now()
-output_folder_path=path['output_folder_path']+"/"+param['project_name']+"/"+str(now.strftime("%d.%m.%Y %H:%M:%S"))
-os.makedirs(output_folder_path,exist_ok=True)
+now = datetime.datetime.now()#get the time and date
+output_folder_path=path['output_folder_path']+"/"+param['project_name']+"/"+str(now.strftime("%d.%m.%Y %H:%M:%S"))#create the output folder directory path in string
+os.makedirs(output_folder_path,exist_ok=True)#create the output folder directory
 
 
 with open(output_folder_path+'/result.txt', "w") as f:#output the model's summary
   f.write('%s\n' %param['project_name'])
   f.write('%s\n' % now.strftime("%d/%m/%Y %H:%M:%S"))#output the date and time
   f.write("Keys: %s\n" %param['keys'])#output the keys
-  f.write(str(train_label_summary)+" \n")
+  f.write("Training class size %s\n" % str(train_dataset_summary))
+  f.write("Validation class size: %s\n" % str(val_dataset_summary))
   f.write("Learning rate: %s\n" %param['learning_rate'])#output the keys
   f.write(" %s\n" %model.summary(print_fn=lambda x: f.write(x + '\n')))#print the summary of the model
   f.close()
 
 #initialize variables for plotting and outputting raw datas
-epochs=np.arange(0,param['epochs'])
-f1_scores=np.zeros((len(param['keys']),param['epochs']))
-weighted_average=np.zeros(param['epochs'])
-output_dict={}
+epochs=np.arange(0,param['epochs'])#contain integer from 0 to final epoch
+f1_scores=np.zeros((len(param['keys']),param['epochs']))#vector to store f1-scores for each label in each epoch
+weighted_average=np.zeros(param['epochs'])#vector containing weighted average for each epoch
+output_dict={}#dict containg raw data from sklearn.metrics.classification_report
 
 print('training started')
 #training
@@ -113,7 +110,7 @@ for i in range(param['epochs']):
     f1_scores[counter][i]=report_dict[key]['f1-score']
     counter+=1
 
-    if counter==len(param['keys']):
+    if counter==len(param['keys']):#stop the loop when the counter is at the last label, other element in the dict are not label
       break
   #output the raw data
   with open(output_folder_path+'/raw_data.json','w') as f:
@@ -126,13 +123,14 @@ for i in range(param['epochs']):
   config_save.save_pretrained(path['save_model_path']+"/epoch_"+str(i))#save the config file}
 
 
+
+
 #plot the f1-score for each keys
 for i in range(len(f1_scores)):
   plt.plot(epochs, f1_scores[i],label=param['keys'][i])
 
 #plot the weighted average
 plt.plot(epochs,weighted_average,label='weighted average')
-
 # naming the x axis
 plt.xlabel(param['xlabel'])
 # naming the y axis
