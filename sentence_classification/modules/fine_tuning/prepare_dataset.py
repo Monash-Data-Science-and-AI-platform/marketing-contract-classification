@@ -1,16 +1,18 @@
+from typing import KeysView
 from transformers import AutoTokenizer, AutoModel
 import tensorflow as tf
 import numpy as np
 
 class Prepare_dataset:
 
-    def __init__(self,tokenizer_path,train_features,val_features,train_labels,val_labels):
+    def __init__(self,tokenizer_path,train_features,val_features,train_labels,val_labels,keys):
 
         self.tokenizer=AutoTokenizer.from_pretrained(tokenizer_path)#define the tokenizer
         self.train_features=train_features#train features are the sentences for training
         self.val_features=val_features#val features are the sentences for validation
         self.train_labels=train_labels#lables for the training sentences
         self.val_labels=val_labels#labels for validation sentences
+        self.keys=keys#name of each label
 
     def prepare_dataset(self,features,labels):
 

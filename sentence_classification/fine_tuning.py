@@ -49,7 +49,7 @@ val_labels=extract.val_labels()#labels for validation sentences
 
 
 #define a class object that handles the processing of sentences and label to dataset
-dataset_processor=Prepare_dataset(path['tokenizer_path'],train_features,val_features,train_labels,val_labels)
+dataset_processor=Prepare_dataset(path['tokenizer_path'],train_features,val_features,train_labels,val_labels,param['keys'])
 val_dataset=dataset_processor.get_val_dataset()#get the validation dataset
 train_dataset=dataset_processor.get_train_dataset()#get the training dataset
 train_dataset_summary=dataset_processor.get_train_dataset_summary()
