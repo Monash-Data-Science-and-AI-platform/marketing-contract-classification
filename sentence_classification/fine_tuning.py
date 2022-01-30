@@ -46,13 +46,14 @@ train_labels=extract.train_labels()#label for training sentences
 val_features=extract.val_text()#sentences for validation
 val_labels=extract.val_labels()#labels for validation sentences
 
-train_dataset_summary=extract.get_train_dataset_summary()
-val_dataset_summary=extract.get_val_dataset_summary()
+
 
 #define a class object that handles the processing of sentences and label to dataset
 dataset_processor=Prepare_dataset(path['tokenizer_path'],train_features,val_features,train_labels,val_labels)
 val_dataset=dataset_processor.get_val_dataset()#get the validation dataset
 train_dataset=dataset_processor.get_train_dataset()#get the training dataset
+train_dataset_summary=dataset_processor.get_train_dataset_summary()
+val_dataset_summary=dataset_processor.get_val_dataset_summary()
 
 #set the class weight based on the parameter.json
 if (param['weighted']==0):
