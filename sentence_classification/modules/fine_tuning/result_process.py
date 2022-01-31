@@ -21,7 +21,7 @@ def result_process(scaled_pred,val_labels,txt_path,counter):
     report_dict=skm.classification_report(val_labels,scaled_pred,output_dict=True)
     #get the shape of confusio matrix for printing
     dimension=confusion_matrix.shape
-    report_dict['confusion matrix']=confusion_matrix.to_list()
+    report_dict['confusion matrix']=confusion_matrix.tolist()
 
     with open(txt_path, "a") as f:
         f.write("Epoch %d" %counter)
