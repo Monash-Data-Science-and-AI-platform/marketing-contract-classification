@@ -10,15 +10,6 @@ Creating miniconda:
 4. setup miniconda environment, documentation is available at https://docs.massive.org.au/M3/software/pythonandconda/python-miniconda.html?highlight=miniconda
 
 ___________________________________________________________________________________________________________________________________________________________
-Installation of modules:
-
-After setting up miniconda , and the taskbar on the left, Jupyter Lab from .scratch.ec18.[username].miniconda should be available
-1. Launch the  Jupyter Lab from [].miniconda terminal
-2. Launch the terminal in the launcher(inside Jupyter Lab from [].miniconda terminal)
-3. Activate the conda environment with the command:  source [path to miniconda/bin/activate]
-4. Create the virtual environment with the command: conda env update -n base --file [path to environment.yml]
-
-___________________________________________________________________________________________________________________________________________________________
 To upload large amount of file:
 
 Use Filezilla to transfer files(especially the dataset) into MASSIVE, documentation is available at: https://docs.massive.org.au/M3/transferring-files.html
@@ -73,7 +64,16 @@ Alternative:
 Documentation is avaiable on https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project
 
 7. Pulling process is still the same via MASSIVE
-________________________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+Installation of modules:
+
+After setting up miniconda , and the taskbar on the left, Jupyter Lab from .scratch.ec18.[username].miniconda should be available
+1. Launch the  Jupyter Lab from [].miniconda terminal
+2. Launch the terminal in the launcher(inside Jupyter Lab from [].miniconda terminal)
+3. Activate the conda environment with the command:  source [path to miniconda/bin/activate]
+4. Create the virtual environment with the command: conda env update -n base --file [path to environment.yml]
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 Login to wandb in terminal: 
 -make sure you created a wandb account via: https://app.wandb.ai/login?signup=true
 
