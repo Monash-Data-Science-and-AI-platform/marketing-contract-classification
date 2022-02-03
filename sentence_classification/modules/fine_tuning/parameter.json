@@ -1,7 +1,7 @@
 {
     "project_name":"multi-class pre-training epoch 1",
     
-    "wandb_entity":"ilee0022",
+    "wandb_entity":"areeja",
 
     "learning_rate":5e-6,
 

@@ -3,10 +3,10 @@
 
     "ylabel":"f1-scores",
 
-    "title":"Binary-label R&R no pre-training f1-scores against epochs(focal)",
+    "title":"Multi classification no pre-training f1-scores against epochs(focal)",
 
     "keys":[
-        "R&R","None"
+        "DC","CA_1","CA_2","R&R","IE","Flex", "none"
     ],
 
     "raw_data_file_path":"ec18_scratch/ilee0022/experiment_output/binary-class no pre-training/29.01.2022 02:27:00/raw_data.json",

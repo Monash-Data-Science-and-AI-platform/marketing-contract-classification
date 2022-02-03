@@ -1,13 +1,13 @@
 {
     "project_name":"Legal-bert pre_training",
 
-    "wandb_entity":"ilee0022",
+    "wandb_entity":"areeja",
     
-    "preTraining_folder_path":"ec18_scratch/ilee0022/Entire Dataset_Unlabled",
+    "preTraining_folder_path":"ec18_scratch/Dataset and model/Entire Dataset_Unlabled",
 
-    "pre_Training_model_path":"ec18_scratch/ilee0022/bert_based_uncased_contracts",
+    "pre_Training_model_path":"ec18_scratch/Dataset and model/bert-based-uncased",
 
-    "save_model_path":"ec18_scratch/ilee0022/preTrained_model",
+    "save_model_path":"ec18_scratch/areeja/save pretrained models",
 
     "modules_path":"marketing-contract-classification/sentence_classification/modules/pre_Training",
     
