@@ -20,8 +20,8 @@ csv_file=glob.glob(param['dataset_folder_path']+"/*.csv")
 xlsx_file=glob.glob(param['dataset_folder_path']+"/*.xlsx")
 
 #obtain the sentences
-excel_data=Extract_data(csv_file+xlsx_file).astype(str)
-sentences=(excel_data.get_data())
+excel_data=Extract_data(csv_file+xlsx_file)
+sentences=(excel_data.get_data()).astype(str)
 print('Data extracted\n')
 tokenizer=AutoTokenizer.from_pretrained(param['tokenizer_path'])#define the tokenizer
 config=BertConfig.from_pretrained(param['config_path'])#load the config
