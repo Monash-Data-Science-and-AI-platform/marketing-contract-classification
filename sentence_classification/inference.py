@@ -31,7 +31,7 @@ inputs = tokenizer(sentences.tolist(), padding='max_length',truncation=True,max_
 
 model.summary()#print the summary of the model
 print('Prediction done, processing the raw output\n')
-outputs = model(inputs.input_ids,training=False)#get the predictions from the model
+outputs=model.predict(inputs.input_ids,batch_size=64)#get the predictions from the model
 logits = outputs.logits#obtain the output logits
 
 scaled_result=tf.math.sigmoid(logits).numpy()#scale the output logits with sigmoid function
