@@ -98,7 +98,7 @@ print('training started')
 #training
 for i in range(param['epochs']):
   model.fit(train_dataset.shuffle(param['shuffle']).batch(param['train_batch_size']), epochs=1, batch_size=param['train_batch_size'],class_weight=class_weights, validation_data=val_dataset.batch(param['val_batch_size']),callbacks=[WandbCallback()],verbose=2)#train the model
-  pred=model.predict(val_dataset.batch(param['val_batch_size']),batch_size=param['val_batch_size'])#get the predictions
+  pred=model.predict(val_features,batch_size=param['val_batch_size'])#get the predictions
   report_dict=result_process(pred.logits,val_labels,output_folder_path+'/result.txt',i)#class to process the result
   
   output_dict[str(i)]=report_dict#obtain the skm.classification report
