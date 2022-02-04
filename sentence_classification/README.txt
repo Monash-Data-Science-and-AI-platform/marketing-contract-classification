@@ -76,7 +76,7 @@ Fine-tuning:
 	-define the "project_name" and "wandb_entity"
 	-change "learning_rate" if needed to test on different learning_rate
 	-change "keys" to suite the current experiment*************(without "None")************
-	-in "loss_function": use "binary_crossentropy" for both multi-class classification and single-class classification
+	-in "loss_function": use "binary_crossentropy" or "sigmoid_focal_crossentropy" for both multi-class classification and single-class classification
 	-in "weighted" set 0 if test for balanced class weight, and 1 if testing for class weight inversely proportional to class size
 	-change the graph parameters:
 		-"xlabel": label for x-axis of the output graph

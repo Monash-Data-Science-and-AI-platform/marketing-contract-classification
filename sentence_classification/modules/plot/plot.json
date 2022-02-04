@@ -6,7 +6,11 @@
     "title":"Multi classification no pre-training f1-scores against epochs(focal)",
 
     "keys":[
+<<<<<<< Updated upstream
         "DC","CA_1","CA_2","R&R","IE","Flex", "none"
+=======
+        "DC","CA_1","CA_2","R&R","IE","Flex","None"
+>>>>>>> Stashed changes
     ],
 
     "raw_data_file_path":"ec18_scratch/ilee0022/experiment_output/binary-class no pre-training/29.01.2022 02:27:00/raw_data.json",
