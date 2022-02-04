@@ -51,6 +51,12 @@ class Extract_data:
       sentences=df['processedText'].to_numpy()
 
       return sentences
+    def get_source_doc(self):
+
+      df=self.read_excel_data(self.excel_paths)
+      source_doc=df['contractName'].to_numpy()
+
+      return source_doc
 
     def get_data(self):#return train set sentences
     
