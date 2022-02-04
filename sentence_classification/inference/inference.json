@@ -3,19 +3,17 @@
         "DC","CA_1","CA_2","R&R","IE","Flex","None"
     ],
     
-    "data_file_path": "ec18_scratch/ilee0022/Labeled Training Dataset_Manually Coded Contracts/186 Arthur Rutenberg Homes coded.xlsx",
-
-    "inclusive_starting_row":0,
-
-    "exclusive_ending_row":20,
+    "dataset_folder_path": "ec18_scratch/ilee0022/Labeled Training Dataset_Manually Coded Contracts/test_val",
 
     "tokenizer_path":"ec18_scratch/ilee0022/bert_based_uncased_contracts",
 
-    "model_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/new_dataset/multi_label_no_pt/epoch_18/tf_model.h5",
+    "model_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/new_dataset/multi_label_no_pt_no_weight_focal/epoch_52",
 
-    "config_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/new_dataset/multi_label_no_pt/epoch_18/config.json",
+    "config_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/new_dataset/multi_label_no_pt_no_weight_focal/epoch_52",
 
-    "output_path":"ec18_scratch/ilee0022/inference_output/inference_output_1.csv",
+    "modules_path":"marketing-contract-classification/sentence_classification/inference",
+
+    "output_path":"ec18_scratch/ilee0022/inference_output/inference_output_2.csv",
 
     "max_length":512
 }
