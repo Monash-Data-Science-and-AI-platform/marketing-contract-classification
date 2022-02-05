@@ -7,9 +7,9 @@
 
     "tokenizer_path":"ec18_scratch/ilee0022/bert_based_uncased_contracts",
 
-    "model_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/new_dataset/multi_label_no_pt_no_weight_focal/epoch_52",
+    "model_path":"ec18_scratch/ilee0022/checking_save_model/epoch_42",
 
-    "config_path":"ec18_scratch/ilee0022/saved_fine_tuned_model/new_dataset/multi_label_no_pt_no_weight_focal/epoch_52",
+    "config_path":"ec18_scratch/ilee0022/checking_save_model/epoch_42",
 
     "modules_path":"marketing-contract-classification/sentence_classification/inference",
 
