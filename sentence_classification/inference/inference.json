@@ -13,7 +13,7 @@
 
     "modules_path":"marketing-contract-classification/sentence_classification/inference",
 
-    "output_path":"ec18_scratch/ilee0022/inference_output/inference_output_2.csv",
+    "output_path":"ec18_scratch/ilee0022/inference_output/inference_output_3.csv",
 
     "max_length":512
 }
