@@ -22,6 +22,7 @@ def result_process(scaled_pred,val_labels,txt_path,counter):
     #get the shape of confusio matrix for printing
     dimension=confusion_matrix.shape
     report_dict['confusion matrix']=confusion_matrix.tolist()
+    report_dict['val_predictions']=scaled_pred.tolist()
 
     with open(txt_path, "a") as f:
         f.write("Epoch %d" %counter)
