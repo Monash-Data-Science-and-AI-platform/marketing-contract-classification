@@ -5,7 +5,7 @@
     
     "dataset_folder_path": "ec18_scratch/ilee0022/Labeled Training Dataset_Manually Coded Contracts/test_val",
 
-    "tokenizer_path":"ec18_scratch/ilee0022/bert_based_uncased_contracts",
+    "tokenizer_path":"ec18_scratch/ilee0022/checking_save_model/epoch_42",
 
     "model_path":"ec18_scratch/ilee0022/checking_save_model/epoch_42",
 
