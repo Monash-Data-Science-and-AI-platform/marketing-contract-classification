@@ -3,7 +3,7 @@
         "DC","CA_1","CA_2","R&R","IE","Flex","None"
     ],
     
-    "dataset_folder_path": "ec18_scratch/ilee0022/Entire Dataset_Unlabled",
+    "dataset_folder_path": "ec18_scratch/ilee0022/Labeled Training Dataset_Manually Coded Contracts/test_val",
 
     "tokenizer_path":"ec18_scratch/ilee0022/bert_based_uncased_contracts",
 
@@ -13,7 +13,7 @@
 
     "modules_path":"marketing-contract-classification/sentence_classification/inference",
 
-    "output_path":"ec18_scratch/ilee0022/inference_output/inference_entire.csv",
+    "output_path":"ec18_scratch/ilee0022/inference_output/inference_6.csv",
 
     "max_length":512
 }
