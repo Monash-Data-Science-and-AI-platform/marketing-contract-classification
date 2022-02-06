@@ -8,11 +8,11 @@ def result_process(scaled_pred,val_labels,txt_path,counter):
     #txt_path: path for txt file for the result to print
     #counter: external counter for the epoch of the training
 
-    scaled_pred=tf.math.sigmoid(scaled_pred).numpy()#use sigmoid function to convert the logits to between 0 and 1
+    sigmoid_pred=tf.math.sigmoid(scaled_pred).numpy()#use sigmoid function to convert the logits to between 0 and 1
+    scaled_pred=np.zeros(sigmoid_pred.shape)#define the np array of the standarduzed result
     #scale the predictions to 0 and 1
-    scaled_pred[scaled_pred>0.5]=1
-    scaled_pred[scaled_pred<=0.5]=0
-
+    scaled_pred[sigmoid_pred>0.5]=1
+    
     #produce the confusion matrix
     confusion_matrix = skm.multilabel_confusion_matrix(val_labels, scaled_pred)#
 
