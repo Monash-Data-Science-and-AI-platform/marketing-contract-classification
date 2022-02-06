@@ -29,7 +29,7 @@ tokenizer=AutoTokenizer.from_pretrained(param['tokenizer_path'])#define the toke
 config=BertConfig.from_pretrained(param['config_path'])#load the config
 model = TFBertForSequenceClassification.from_pretrained(param['model_path'],config=config)#define the model
 print('Predictions started\n')
-inputs = tokenizer(sentences.tolist(), padding='max_length',truncation=True,max_length=512,return_tensors="tf")#obtain the encodings
+inputs = tokenizer(sentences.tolist(), padding='max_length',truncation=True,max_length=512)#obtain the encodings
 
 model.summary()#print the summary of the model
 
