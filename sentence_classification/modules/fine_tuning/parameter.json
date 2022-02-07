@@ -1,7 +1,7 @@
 {
-    "project_name":"multi-class pre-training no pre-training",
+    "project_name":"multi-class pre-training epoch 1",
     
-    "wandb_entity":"ilee0022",
+    "wandb_entity":"areeja",
 
     "learning_rate":5e-6,
 
@@ -25,7 +25,7 @@
 
     "ylabel":"f1-scores",
 
-    "plot_title":"Multi-label no pre-training f1-score against epoch(focal loss)"
+    "plot_title":"Multi-label 1 epoch pre-training f1-score against epoch(focal loss)"
 
 
 }
