@@ -14,10 +14,10 @@ class Extract_data:
       #method for extracting data from excel file
       #return df as pandas.DataFrame
       if paths[0].endswith('.csv'):
-        df=pd.read_csv(paths[0],dtype='string')
+        df=pd.read_csv(paths[0])
 
       elif paths[0].endswith('.xlsx'):
-        df=pd.read_excel(paths[0],engine='openpyxl',dtype='string')
+        df=pd.read_excel(paths[0],engine='openpyxl')
 
       paths=np.delete(paths,0)#remove the first path as it is assigned to df already
       
@@ -26,14 +26,14 @@ class Extract_data:
         error=False#intialise error variable
         if path.endswith('.csv'):#for csv file
           try:
-              new=pd.read_csv(path,dtype='string')#read the file
+              new=pd.read_csv(path)#read the file
           except:
               error=True#if fails to read the file
               print(path)#print the file's path
               pass
 
         elif path.endswith('.xlsx'):#for xlsx file
-          new=pd.read_excel(path,engine='openpyxl',dtype='string')#read the file
+          new=pd.read_excel(path,engine='openpyxl')#read the file
         
         if(error==False):#if  no error occured
             new=new.dropna()#remove all empty rows
