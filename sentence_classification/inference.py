@@ -30,10 +30,13 @@ config=BertConfig.from_pretrained(param['config_path'])#load the config
 model = TFBertForSequenceClassification.from_pretrained(param['model_path'],config=config)#define the model
 print('Predictions started\n')
 inputs = tokenizer(sentences.tolist(), padding='max_length',truncation=True,max_length=512)#obtain the encodings
-
+inputs = tf.data.Dataset.from_tensor_slices((#create the dataset
+            dict(inputs)
+            
+        ))
 model.summary()#print the summary of the model
 
-outputs=model.predict(inputs.input_ids,batch_size=64)#get the predictions from the model
+outputs=model.predict(inputs.batch(64),batch_size=64)#get the predictions from the model
 logits = outputs.logits#obtain the output logits
 print('Prediction done, processing the raw output\n')
 scaled_result=tf.math.sigmoid(logits).numpy()#scale the output logits with sigmoid function
