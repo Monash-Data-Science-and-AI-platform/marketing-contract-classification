@@ -57,6 +57,19 @@ class Extract_data:
       source_doc=df['contractName'].to_numpy()
 
       return source_doc
+    def get_line_count(self):
+
+      df=df=self.read_excel_data(self.excel_paths)
+      lineCount=df['lineCount'].to_numpy()
+
+      return lineCount
+    
+    def get_file_number(self):
+
+      df=df=self.read_excel_data(self.excel_paths)
+      fileNumber=df['fileNumber'].to_numpy()
+
+      return fileNumber
 
     def get_data(self):#return train set sentences
     

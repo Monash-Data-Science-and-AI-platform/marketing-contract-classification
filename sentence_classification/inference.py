@@ -23,6 +23,8 @@ xlsx_file=glob.glob(param['dataset_folder_path']+"/*.xlsx")
 excel_data=Extract_data(csv_file+xlsx_file)
 sentences=(excel_data.get_data()).astype(str)
 source_doc=(excel_data.get_source_doc()).astype(str)
+lineCount=(excel_data.get_line_count()).astype(str)
+fileNumber=(excel_data.get_file_number()).astype(str)
 
 print('Data extracted\n')
 tokenizer=AutoTokenizer.from_pretrained(param['tokenizer_path'])#define the tokenizer
@@ -49,7 +51,9 @@ standardized_result_trans=np.transpose(standardized_result)#transpose the array 
 
 new_df=pd.DataFrame()#initialize new pandas dataframe
 new_df['input_sentences']=sentences#add the sentences into the dataframe
-new_df['doc path']=source_doc#transfer the document path
+new_df['contractName']=source_doc#transfer the document path
+new_df['lineCount']=lineCount
+new_df['fileNumber']=fileNumber
 
 for i in range(len(param['keys'])):#transfer all the predictions into the df
   new_df[param['keys'][i]]=standardized_result_trans[i]
