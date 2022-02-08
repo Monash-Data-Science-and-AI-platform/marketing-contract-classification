@@ -6,14 +6,10 @@
     "title":"Multi classification no pre-training f1-scores against epochs(focal)",
 
     "keys":[
-<<<<<<< Updated upstream
-        "DC","CA_1","CA_2","R&R","IE","Flex", "none"
-=======
-        "DC","CA_1","CA_2","R&R","IE","Flex","None"
->>>>>>> Stashed changes
+        "DC","CA_1","CA_2","R&R","IE","Flex", "None"
     ],
 
-    "raw_data_file_path":"ec18_scratch/ilee0022/experiment_output/binary-class no pre-training/29.01.2022 02:27:00/raw_data.json",
+    "raw_data_file_path":"ec18/output/multi-class pre-training epoch 1/07.02.2022 23:13:09/raw_data.json",
 
-    "save_figure_path":"ec18_scratch/ilee0022/experiment_output/binary-class no pre-training/29.01.2022 02:27:00/result_graph.png"
+    "save_figure_path":"ec18/output/multi-class pre-training epoch 1/07.02.2022 23:13:09/graph_output.png"
 }
