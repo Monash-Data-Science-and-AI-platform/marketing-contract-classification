@@ -27,6 +27,7 @@
 # Option 2: Choose GPU flavours, "k20m" or "m2070"
 #SBATCH --gres=gpu:V100:1
 #SBATCH --partition=m3g
+#SBATCH --constraint=V100-32G
 # Or
 # SBATCH --gres=gpu:k20m:1
 
