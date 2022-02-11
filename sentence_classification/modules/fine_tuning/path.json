@@ -4,7 +4,7 @@
     ],
 
     "validation_data_path":[
-        "ec18_scratch/Dataset and model/Dataset/validation_dataset.xlsx"
+        "ec18_scratch/Dataset and model/Dataset/training_dataset.xlsx"
     ],
 
     "tokenizer_path":"ec18_scratch/Dataset and model/bert-based-uncased",
