@@ -12,6 +12,7 @@ import matplotlib.pyplot as plt
 import os
 import tensorflow_addons as tfa
 
+print("Code started to run\n")
 #open the json file that contains all the path and parameters
 param_file=open('marketing-contract-classification/sentence_classification/modules/fine_tuning/parameter.json')
 path_file=open('marketing-contract-classification/sentence_classification/modules/fine_tuning/path.json')
