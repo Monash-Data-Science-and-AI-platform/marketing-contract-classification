@@ -1,6 +1,6 @@
 {
     "keys":[
-        "DC","CA_1","CA_2","R&R","IE","Flex","None"
+        "CA_1","R&R","IE","Flex","None"
     ],
     
     "dataset_folder_path": "ec18_scratch/Dataset and model/Entire Dataset_Unlabled",
