@@ -7,9 +7,9 @@
 
     "tokenizer_path":"ec18_scratch/Dataset and model/bert-based-uncased",
 
-    "model_path":"ec18_scratch/areeja/save output models_1/epoch_99",
+    "model_path":"ec18_scratch/areeja/save output models_1/epoch_24",
 
-    "config_path":"ec18_scratch/areeja/save output models_1/epoch_99",
+    "config_path":"ec18_scratch/areeja/save output models_1/epoch_24",
 
     "modules_path":"marketing-contract-classification/sentence_classification/inference",
 
