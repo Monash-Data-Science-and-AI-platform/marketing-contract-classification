@@ -19,6 +19,13 @@ def result_process(scaled_pred,val_labels,txt_path,counter):
     #generate the report
     report=skm.classification_report(val_labels,scaled_pred)#
     report_dict=skm.classification_report(val_labels,scaled_pred,output_dict=True)
+
+    hammingloss=skm.hamming_loss(val_labels,scaled_pred)
+    print(hammingloss)
+
+    accuracy=skm.accuracy_score(val_labels,scaled_pred)
+    print(accuracy)
+
     #get the shape of confusio matrix for printing
     dimension=confusion_matrix.shape
     report_dict['confusion matrix']=confusion_matrix.tolist()
@@ -34,5 +41,7 @@ def result_process(scaled_pred,val_labels,txt_path,counter):
         for j in range(dimension[0]): #iterate across the 1st dimension
             np.savetxt(f, confusion_matrix[j], fmt='%i')
             f.write("\n")
+        f.write(hammingloss)
+        f.write(accuracy)
 
     return report_dict
