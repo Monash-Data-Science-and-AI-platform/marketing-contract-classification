@@ -42,6 +42,8 @@ def result_process(scaled_pred,val_labels,txt_path,counter):
             np.savetxt(f, confusion_matrix[j], fmt='%i')
             f.write("\n")
         f.write(str(hammingloss))
+        f.write("\n")
         f.write(str(accuracy))
+        f.write("\n")
 
     return report_dict
