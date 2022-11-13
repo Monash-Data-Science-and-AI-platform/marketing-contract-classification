@@ -1,10 +1,10 @@
 {
     "training_data_path":[
-        "Dataset and model/Dataset/training_dataset.xlsx"
+        "Dataset and model/Dataset/training_dataset1.xlsx"
     ],
 
     "validation_data_path":[
-        "Dataset and model/Dataset/validation_dataset.xlsx"
+        "Dataset and model/Dataset/validation_dataset1.xlsx"
     ],
 
     "tokenizer_path":"ec18_scratch/Dataset and model/bert-based-uncased",
@@ -17,7 +17,7 @@
 
     "modules_path":"marketing-contract-classification/sentence_classification/modules/fine_tuning",
 
-    "save_model_path":"ec18_scratch/areeja/save output models_ph7_without_augmented_redist_val_train"
+    "save_model_path":"ec18_scratch/areeja/save output models_ph7_without_augmented_redist_val_train_1augm"
 
 
 }
