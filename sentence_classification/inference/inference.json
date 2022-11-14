@@ -3,7 +3,7 @@
         "CA_1","R&R","IE","Flex","None"
     ],
     
-    "dataset_folder_path": "Dataset and model/Entire Dataset_Unlabled - Copy",
+    "dataset_folder_path": "ec18_scratch/Dataset and model/Entire Dataset_Unlabled",
 
     "tokenizer_path":"ec18_scratch/Dataset and model/bert-based-uncased",
 
