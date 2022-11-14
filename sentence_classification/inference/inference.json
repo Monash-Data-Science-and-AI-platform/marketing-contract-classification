@@ -3,17 +3,17 @@
         "CA_1","R&R","IE","Flex","None"
     ],
     
-    "dataset_folder_path": "ec18_scratch/Dataset and model/Entire Dataset_Unlabled",
+    "dataset_folder_path": "Dataset and model/Entire Dataset_Unlabled - Copy",
 
     "tokenizer_path":"ec18_scratch/Dataset and model/bert-based-uncased",
 
-    "model_path":"ec18_scratch/areeja/save output models_1/epoch_24",
+    "model_path":"ec18_scratch/areeja/save output models_ph7_without_augmented_redist_val_train_1augm/epoch_24",
 
-    "config_path":"ec18_scratch/areeja/save output models_1/epoch_24",
+    "config_path":"ec18_scratch/areeja/save output models_ph7_without_augmented_redist_val_train_1augm/epoch_24",
 
     "modules_path":"marketing-contract-classification/sentence_classification/inference",
 
-    "output_path":"ec18/inference output/output1.csv",
+    "output_path":"ec18/inference output/output_1augm_redis.csv",
 
     "max_length":512
 }
