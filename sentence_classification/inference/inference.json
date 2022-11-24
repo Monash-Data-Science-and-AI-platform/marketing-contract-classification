@@ -7,13 +7,13 @@
 
     "tokenizer_path":"ec18_scratch/Dataset and model/bert-based-uncased",
 
-    "model_path":"ec18_scratch/areeja/save output models_ph7_without_augmented_redist_val_train_1augm/epoch_24",
+    "model_path":"ec18_scratch/areeja/save output models_ph7_80_20/epoch_60",
 
-    "config_path":"ec18_scratch/areeja/save output models_ph7_without_augmented_redist_val_train_1augm/epoch_24",
+    "config_path":"ec18_scratch/areeja/save output models_ph7_80_20/epoch_60",
 
     "modules_path":"marketing-contract-classification/sentence_classification/inference",
 
-    "output_path":"ec18/inference output/output_1augm_redis.csv",
+    "output_path":"ec18/inference output/output_8-_20_not_non.csv",
 
     "max_length":512
 }
