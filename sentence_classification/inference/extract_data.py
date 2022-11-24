@@ -14,7 +14,7 @@ class Extract_data:
       #method for extracting data from excel file
       #return df as pandas.DataFrame
       if paths[0].endswith('.csv'):
-        df=pd.read_csv(paths[0])
+        df=pd.read_csv(paths[0],encoding='latin1')
 
       elif paths[0].endswith('.xlsx'):
         df=pd.read_excel(paths[0],engine='openpyxl')
