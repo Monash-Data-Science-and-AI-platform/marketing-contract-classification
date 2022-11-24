@@ -13,7 +13,7 @@
 
     "modules_path":"marketing-contract-classification/sentence_classification/inference",
 
-    "output_path":"ec18/inference output/output_8-_20_not_non.csv",
+    "output_path":"ec18/inference output/output_8-_20_not_non2.csv",
 
     "max_length":512
 }
